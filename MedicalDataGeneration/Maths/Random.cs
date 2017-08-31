@@ -38,5 +38,12 @@ public class Random {
 	public float RandomInRange ( float p_min, float p_max ) {
 		return p_min + ( p_max - p_min ) * NextFloat ( );
 	}
+
+	public float RandomGaussianDistribution ( float p_mean, float p_standardDev ) {
+		double u1 = 1.0 - NextDouble ( );
+		double u2 = 1.0 - NextDouble ( );
+		float randStdNormal = ( float ) ( Math.Sqrt( -2.0 * Math.Log( u1 ) ) * Math.Sin ( 2.0 * Math.PI * u2 ) );
+		return ( p_mean + p_standardDev * randStdNormal );
+	}
 }
 

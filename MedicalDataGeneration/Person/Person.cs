@@ -10,7 +10,6 @@ namespace MedicalDataGeneration {
 
 	public enum eRace {
 		WHITE = 'w',
-		HISPANIC = 'h',
 		AFRICAN_AMERICAN = 'f',
 		ASIAN = 'a',
 		OTHER = 'o'
@@ -41,9 +40,10 @@ namespace MedicalDataGeneration {
 				Sex = eSex.FEMALE;
 			}
 
-			Race = CreateRace ( p_rand );
-			Address = Address.GenerateAddress ( p_rand );
 			DateOfBirth = CreateDateOfBirth ( p_rand );
+			Race = CreateRace ( p_rand, DateOfBirth.Year );
+
+			Address = Address.GenerateAddress ( p_rand );
 			PNumber = new PhoneNumber ( Address.City.Town, p_rand );
 			SocialSecurityNumber = GenerateSocialSecurity ( p_rand );
 
@@ -61,9 +61,10 @@ namespace MedicalDataGeneration {
 				Sex = eSex.FEMALE;
 			}
 
-			Race = CreateRace ( p_rand );
-			Address = Address.GenerateAddress ( p_rand );
 			DateOfBirth = CreateDateOfBirth ( p_rand );
+			Race = CreateRace ( p_rand, DateOfBirth.Year );
+
+			Address = Address.GenerateAddress ( p_rand );
 			PNumber = new PhoneNumber ( Address.City.Town, p_rand );
 			SocialSecurityNumber = GenerateSocialSecurity ( p_rand );
 
@@ -82,9 +83,10 @@ namespace MedicalDataGeneration {
 			}
 
 			Sex = p_sex;
-			Race = CreateRace ( p_rand );
-			Address = Address.GenerateAddress ( p_rand );
 			DateOfBirth = CreateDateOfBirth ( p_rand );
+			Race = CreateRace ( p_rand, DateOfBirth.Year ); // Race depends on year born in US
+
+			Address = Address.GenerateAddress ( p_rand );
 			PNumber = new PhoneNumber ( Address.City.Town, p_rand );
 			SocialSecurityNumber = GenerateSocialSecurity ( p_rand );
 
@@ -132,24 +134,38 @@ namespace MedicalDataGeneration {
 		}
 
 		private DateTime CreateDateOfBirth ( Random p_rand ) {
-			DateTime start = DateTime.Now.Subtract ( new TimeSpan ( 365 * 80, 0, 0, 0, 0 ) );
-			int range = ( DateTime.Now.Subtract ( new TimeSpan ( 365 * 20, 0, 0, 0, 0 ) ) - start ).Days;           
+			DateTime start = new DateTime ( 1940, 1, 1, 1, 1, 1 ); // First person can be born on January 1, 1940
+			int range = ( DateTime.Now.Subtract ( new TimeSpan ( 365 * 20, 0, 0, 0, 0 ) ) - start ).Days; // Everyone must be at least 20           
 			return start.AddDays ( p_rand.Next ( range ) );
 		}
 
-		private eRace CreateRace ( Random p_rand ) {
-			double val = p_rand.NextDouble ( );
-			if ( val < 0.665 ) {
-				return eRace.WHITE;
-			} else if ( val < 0.812 ) {
-				return eRace.HISPANIC;
-			} else if ( val < 0.934 ) {
-				return eRace.AFRICAN_AMERICAN;
-			} else if ( val < 0.976 ) {
-				return eRace.ASIAN;
+		private eRace CreateRace ( Random p_rand, int p_yearBorn ) {
+			p_yearBorn -= 1939; 
+			p_yearBorn /= 10; // Prep for array data
+
+			float val = p_rand.NextFloat ( );
+			float sum = 0.0f;
+			for ( int i = 0; i < Constraints.PersonConstraints.sRaceRatios.Length; i++ ) {
+				sum += Constraints.PersonConstraints.sRaceRatios[ p_yearBorn, i ];
+				if ( val < sum ) {
+					return RaceFromIndex ( i );
+				}
 			}
 
 			return eRace.OTHER;
+		}
+
+		private eRace RaceFromIndex  ( int p_index ) {
+			switch ( p_index ) {
+				case 0:
+					return eRace.WHITE;
+				case 1:
+					return eRace.AFRICAN_AMERICAN;
+				case 2:
+					return eRace.ASIAN;
+				default:
+					return eRace.OTHER;
+			}
 		}
 
 		// https://www2.census.gov/library/publications/2010/compendia/statab/130ed/tables/11s0205.pdf
@@ -272,44 +288,44 @@ namespace MedicalDataGeneration {
 					weight = CheckWeight ( p_rand, percentile, 107.2, 114.8, 118.5, 126.3, 149.4, 181.2, 208.9, 227.3, 264.5 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 0.0, 7.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 5.0 );
-					}
+					}*/
 				} else if ( age < 40 ) {
 					weight = CheckWeight ( p_rand, percentile, 112.2, 118.8, 126.5, 137.2, 159.8, 194.2, 215.1, 225.4, 253.9 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 0.0, 7.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 5.0 );
-					}
+					}*/
 				} else if ( age < 50 ) {
 					weight = CheckWeight ( p_rand, percentile, 111.9, 120.8, 126.5, 134.9, 158.4, 189.0, 212.0, 228.7, 253.2 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 6.0, 12.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 3.0 );
-					}
+					}*/
 				} else if ( age < 60 ) {
 					weight = CheckWeight ( p_rand, percentile, 112.7, 123.3, 128.8, 138.5, 161.4, 193.8, 213.3, 230.2, 255.3 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 6.0, 12.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 2.0 );
-					}
+					}*/
 				} else if ( age < 70 ) {
 					weight = CheckWeight ( p_rand, percentile, 116.5, 126.1, 132.2, 140.4, 165.7, 192.5, 211.0, 226.3, 241.4 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 6.0, 12.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 5.0 );
-					}
+					}*/
 				} else {
 					weight = CheckWeight ( p_rand, percentile, 109.9, 118.0, 125.7, 136.9, 159.4, 187.1, 201.7, 128.4, 240.6 );
 					if ( p_race == eRace.AFRICAN_AMERICAN ) {
 						weight += RandomInRange ( p_rand, 6.0, 12.0 );
-					} else if ( p_race == eRace.HISPANIC ) {
+					} /*else if ( p_race == eRace.HISPANIC ) {
 						weight -= RandomInRange ( p_rand, 0.0, 5.0 );
-					}
+					}*/
 				}
 			}
 
