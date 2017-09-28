@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MedicalDataGeneration {
 
@@ -95,6 +96,24 @@ namespace MedicalDataGeneration {
 			MedData = MedicalData.GenerateMedicalData ( this, p_rand );
 		}
 
+		public Person ( Random p_rand ) {
+			if ( p_rand.NextDouble ( ) < 0.5 ) {
+				Name = Name.GenerateMaleName ( p_rand );
+				Sex = eSex.MALE;
+			} else {
+				Name = Name.GenerateFemaleName ( p_rand );
+				Sex = eSex.FEMALE;
+			}
+
+			Address = Address.GenerateAddress ( p_rand );
+			PNumber = new PhoneNumber ( Address.City.Town, p_rand );
+			SocialSecurityNumber = GenerateSocialSecurity ( p_rand );
+
+			HeightInches = CreateHeightInches ( p_rand );
+			WeightPounds = CreateWeightPounds ( p_rand, Race, Address.City.Abbreviation );
+			MedData = MedicalData.GenerateMedicalData ( this, p_rand );
+		}
+
 		public override string ToString ( ) {
 			return Name.ToString ( ) + "\n" +
 			Sex + ", " + Race + ", " + DateOfBirth.ToString ( "MM/dd/yyyy" ) + " ( " + GetAge ( ) + " )\n" +
@@ -112,7 +131,7 @@ namespace MedicalDataGeneration {
 			"Town,State,Zip Code,Systolic,Diastolic";*/
 			return "First,Middle,Last,Sex,Race,DoB,Age," +
 			"Height,Weight,Percentile,PNum,SSN,Address," +
-			"Town,State,Zip,Systolic,Diastolic,Risk";
+			"Town,State,Zip,Systolic,Diastolic,Risk_Factors,Disorders";
 		}
 
 		public string ToCSV ( ) {
@@ -133,10 +152,61 @@ namespace MedicalDataGeneration {
 			return ( HeightInches / 12 ).ToString ( ) + "' " + ( HeightInches % 12 ).ToString ( ) + "\"";
 		}
 
+		public bool HasDisorder ( string p_disorder ) {
+			return MedData.HasDisorder ( p_disorder );
+		}
+
+		public void CreateDisorder ( Random p_rand, List<string> p_disorders, int p_numDisordersToHave ) {
+			if ( p_disorders.Count > 0 ) {
+				List<int> values = new List<int> ( );
+				for ( int i = 0; i < p_disorders.Count; i++ ) {
+					values.Add ( i );
+				}
+
+				values.Shuffle ( p_rand );
+
+				for ( int i = 0; i < p_numDisordersToHave; i++ ) {
+					MedData.Disorders.Add ( p_disorders [ values [ i ] ] );
+				}
+			}
+		}
+
+		public void AddDisorder ( string p_disorder ) {
+			MedData.Disorders.Add ( p_disorder );
+		}
+
 		private DateTime CreateDateOfBirth ( Random p_rand ) {
 			DateTime start = new DateTime ( 1940, 1, 1, 1, 1, 1 ); // First person can be born on January 1, 1940
 			int range = ( DateTime.Now.Subtract ( new TimeSpan ( 365 * 20, 0, 0, 0, 0 ) ) - start ).Days; // Everyone must be at least 20           
 			return start.AddDays ( p_rand.Next ( range ) );
+		}
+
+		public void CreateDateOfBirthInRange ( Random p_random, int p_minAge, int p_maxAge ) {
+			DateTime start = DateTime.Now.Subtract ( new TimeSpan ( p_maxAge * 365, 0, 0, 0 ) );
+			int range = ( DateTime.Now.Subtract ( new TimeSpan ( p_minAge * 365, 0, 0, 0 ) ) - start ).Days;
+
+			DateOfBirth = start.AddDays ( p_random.Next ( range ) );
+			Race = CreateRace ( p_random, DateOfBirth.Year );
+		}
+
+		public void CreateDateOfBirthOutOfRange ( Random p_random, int p_minAge, int p_maxAge ) {
+			if ( p_random.NextDouble ( ) < 0.5f ) {
+				CreateDateOfBirthInRange ( p_random, 1, p_minAge );
+			} else {
+				CreateDateOfBirthInRange ( p_random, p_maxAge, Math.Min ( 70, p_maxAge * 3 ) );
+			}
+		}
+
+		public void CreateDateOfBirthLessThanAge ( Random p_random, int p_age ) {
+			CreateDateOfBirthInRange ( p_random, 1, p_age );
+		}
+
+		public void CreateDateOfBirthGreaterThanAge ( Random p_random, int p_age ) {
+			CreateDateOfBirthInRange ( p_random, p_age, Math.Min ( 70, p_age * 3 ) );
+		}
+
+		public void CreateDateOfBirthWithAge ( Random p_random ) {
+			throw new NotImplementedException ( "Error: Cannot create date of birth with specific age" );
 		}
 
 		private eRace CreateRace ( Random p_rand, int p_yearBorn ) {

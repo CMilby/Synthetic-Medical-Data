@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="MedicalDataGeneration.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DecisionGraph\DecisionGraph.cs">
+    <Files>
+      <File FileName="DecisionGraph\DecisionGraph.cs" Line="27" Column="54" />
+      <File FileName="DecisionGraph\Transition.cs" Line="87" Column="12" />
+      <File FileName="Person\Person.cs" Line="132" Column="34" />
+      <File FileName="DecisionGraph\Node.cs" Line="19" Column="3" />
+      <File FileName="Program.cs" Line="11" Column="51" />
+      <File FileName="Util\ListUtil.cs" Line="13" Column="34" />
+      <File FileName="Person\MedicalData.cs" Line="53" Column="4" />
+      <File FileName="DecisionGraph\GraphVariable.cs" Line="11" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

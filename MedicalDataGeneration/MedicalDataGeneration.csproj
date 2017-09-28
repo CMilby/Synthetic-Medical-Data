@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constraints\PersonConstraints.cs" />
@@ -48,7 +50,17 @@
     <Compile Include="Data_Generator\SyntheticDataGenerator.cs" />
     <Compile Include="Data_Generator\DataInjector.cs" />
     <Compile Include="Maths\MathUtil.cs" />
+    <Compile Include="DecisionGraph\DecisionGraph.cs" />
+    <Compile Include="DecisionGraph\Node.cs" />
+    <Compile Include="DecisionGraph\Transition.cs" />
+    <Compile Include="DecisionGraph\GraphDataGenerator.cs" />
+    <Compile Include="Util\ListUtil.cs" />
+    <Compile Include="DecisionGraph\GraphVariable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DecisionGraph\" />
+    <Folder Include="Util\" />
+  </ItemGroup>
 </Project>

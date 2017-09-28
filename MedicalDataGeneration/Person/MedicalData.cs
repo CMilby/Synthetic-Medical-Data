@@ -20,9 +20,13 @@ namespace MedicalDataGeneration {
 		public int Systolic;
 		public int Diastolic;
 
+		public List<string> Disorders;
+
 		public MedicalData ( Person p_person, Random p_random, params eRiskFactor[] p_riskFactors ) {
 			RiskFactors = new List<eRiskFactor> ( p_riskFactors );
 			GenerateBloodPressure ( p_person, RiskFactors, p_random, out Systolic, out Diastolic );
+
+			Disorders = new List<string> ( );
 		}
 
 		public MedicalData ( int p_systolic, int p_diastolic ) {
@@ -30,6 +34,15 @@ namespace MedicalDataGeneration {
 
 			Systolic = p_systolic;
 			Diastolic = p_diastolic;
+
+			Disorders = new List<string> ( );
+		}
+
+		public MedicalData ( Random p_random, Person p_person, List<string> p_disorders ) {
+			RiskFactors = new List<eRiskFactor> ( );
+			GenerateBloodPressure ( p_person, new List<eRiskFactor> ( ), p_random, out Systolic, out Diastolic );
+
+			Disorders = p_disorders;
 		}
 
 		public override string ToString ( ) {
@@ -49,7 +62,17 @@ namespace MedicalDataGeneration {
 			if ( ret.EndsWith ( "|" ) ) {
 				ret = ret.Substring ( 0, ret.Length - 1 );
 			}
+			for ( int i = 0; i < Disorders.Count; i++ ) {
+				ret += Disorders [ i ] + "|";
+			}
+			if ( ret.EndsWith ( "|" ) ) {
+				ret = ret.Substring ( 0, ret.Length - 1 );
+			}
 			return ret; 
+		}
+
+		public bool HasDisorder ( string p_disorder ) {
+			return Disorders.Contains ( p_disorder );
 		}
 
 		public static MedicalData GenerateMedicalData ( Person p_person, Random p_random, params eRiskFactor[] p_riskFactors ) {
