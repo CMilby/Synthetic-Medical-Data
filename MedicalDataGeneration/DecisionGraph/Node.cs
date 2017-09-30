@@ -32,9 +32,29 @@ namespace MedicalDataGeneration.DecisionGraphs {
 			return null;
 		}
 
+		public Transition GetTransitionWithDestinationIdAndTransitionIndex ( int p_dest, int p_trans ) {
+			for ( int i = 0; i < Transitions.Count; i++ ) {
+				if ( Transitions[ i ].GetTo ( ) == p_dest && Transitions[ i ].GetIndex ( ) == p_trans ) {
+					return Transitions[ i ];
+				}
+			}
+
+			return null;
+		}
+
 		public int GetTransitionIndexWithDestinationId ( int p_id ) {
 			for ( int i = 0; i < Transitions.Count; i++ ) {
 				if ( Transitions [ i ].GetTo ( ) == p_id ) {
+					return i;
+				}
+			}
+
+			return -1;
+		}
+
+		public int GetTransitionIndexWithDestinationIdAndTransitionIndex ( int p_dest, int p_trans ) {
+			for ( int i = 0; i < Transitions.Count; i++ ) {
+				if ( Transitions[ i ].GetTo ( ) == p_dest && Transitions [ i ].GetIndex ( ) == p_trans ) {
 					return i;
 				}
 			}

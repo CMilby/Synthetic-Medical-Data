@@ -14,7 +14,8 @@ namespace MedicalDataGeneration {
 				new DataInjector ( 1500, eRiskFactor.HEAVY_SMOKER, eRiskFactor.HEAVY_DRINKER ) );
 			// new SyntheticDataGenerator ( numLines, myPath, new DataInjector ( 10000, 145, 55 ) );*/
 
-			new MedicalDataGeneration.DecisionGraphs.DecisionGraph ( "C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\Graph1.xml" );
+			new MedicalDataGeneration.DecisionGraphs.DecisionGraph ( "C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\Graph1.xml", 
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\", 10, 1234L );
 			Console.ReadLine ( );
 		}
 	}

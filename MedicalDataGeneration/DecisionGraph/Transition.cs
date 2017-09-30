@@ -9,16 +9,22 @@ namespace MedicalDataGeneration.DecisionGraphs {
 		COMPARE_NONE
 	}
 
-	public class Transition {
+	public class Transition : IComparable {
 
+		private int Index;
 		private int To; // -1 == deny, -2 == approve
 		private eTransitionComparisons Comparisons;
 		private string Conditions;
 
-		public Transition ( int p_to, eTransitionComparisons p_compare, string p_conditions ) {
+		public Transition ( int p_index, int p_to, eTransitionComparisons p_compare, string p_conditions ) {
+			Index = p_index;
 			To = p_to;
 			Comparisons = p_compare;
 			Conditions = p_conditions.Replace ( "&lt;", "<" ).Replace ( "&gt;", ">" ).ToLower ( );
+		}
+
+		public int GetIndex ( ) {
+			return Index;
 		}
 
 		public int GetTo ( ) {
@@ -156,6 +162,19 @@ namespace MedicalDataGeneration.DecisionGraphs {
 
 		private bool CompareVariables ( ) {
 			return true;
+		}
+
+		public int CompareTo ( object p_obj ) {
+			if ( p_obj == null ) {
+				return 1;
+			}
+
+			Transition trans = p_obj as Transition;
+			if ( trans != null ) {
+				return Index.CompareTo ( trans.Index );
+			} else {
+				throw new ArgumentException ( "Object is not a Transition" );
+			}
 		}
 	}
 }

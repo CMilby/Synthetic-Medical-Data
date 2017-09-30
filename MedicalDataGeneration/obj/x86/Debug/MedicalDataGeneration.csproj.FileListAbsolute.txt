@@ -2,3 +2,4 @@ C:\Users\Craig\Documents\Projects\Synthetic-Medical-Data\MedicalDataGeneration\b
 C:\Users\Craig\Documents\Projects\Synthetic-Medical-Data\MedicalDataGeneration\bin\Debug\MedicalDataGeneration.pdb
 C:\Users\Craig\Documents\Projects\Synthetic-Medical-Data\MedicalDataGeneration\obj\x86\Debug\MedicalDataGeneration.exe
 C:\Users\Craig\Documents\Projects\Synthetic-Medical-Data\MedicalDataGeneration\obj\x86\Debug\MedicalDataGeneration.pdb
+C:\Users\Craig\Documents\Projects\Synthetic-Medical-Data\MedicalDataGeneration\obj\x86\Debug\MedicalDataGeneration.csprojResolveAssemblyReference.cache
