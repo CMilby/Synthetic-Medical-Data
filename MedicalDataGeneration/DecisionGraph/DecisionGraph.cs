@@ -30,7 +30,7 @@ namespace MedicalDataGeneration.DecisionGraphs {
 		public void GenerateRandomData ( string p_outpath, int p_numLines ) {
 			FileStream fs = new FileStream ( p_outpath + "data.csv", FileMode.Create );
 
-			List<List<Tuple<int, int>>> paths = TraverseAllPaths ( Nodes[ 0 ] );
+			List<List<Tuple<int, int>>> paths = TraverseAllPaths ( Nodes [ 0 ] );
 			Dictionary<int, int> pathDictionary = new Dictionary<int, int> ( );
 
 			using ( StreamWriter sw = new StreamWriter ( fs ) ) {
@@ -39,10 +39,10 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				for ( int i = 0; i < p_numLines; i++ ) {
 					int next = Random.Next ( 0, paths.Count );
 
-					sw.WriteLine ( GeneratePersonFollowBranch ( paths[ next ] ).ToCSV ( ) );
+					sw.WriteLine ( GeneratePersonFollowBranch ( paths [ next ] ).ToCSV ( ) );
 
 					if ( pathDictionary.ContainsKey ( next ) ) {
-						pathDictionary[ next ]++;
+						pathDictionary [ next ]++;
 					} else {
 						pathDictionary.Add ( next, 1 );
 					}
@@ -54,7 +54,7 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				sw.WriteLine ( "Keys:" );
 
 				foreach ( KeyValuePair<int, int> path in pathDictionary ) {
-					sw.WriteLine ( Paths[ path.Key ] + " " + path.Value );
+					sw.WriteLine ( Paths [ path.Key ] + " " + path.Value );
 				}
 			}
 		}
@@ -64,18 +64,26 @@ namespace MedicalDataGeneration.DecisionGraphs {
 
 			int i = 0;
 			for ( ; i < p_branch.Count; i++ ) {
-				Node next = Nodes[ p_branch[ i ].Item1 ];
-				if ( p_branch[ i + 1 ].Item1 < 0 ) {
+				Node next = Nodes [ p_branch [ i ].Item1 ];
+				if ( p_branch [ i + 1 ].Item1 < 0 ) {
 					break; // Allow or deny state
 				}
 
-				Transition trans = next.GetTransitionWithDestinationIdAndTransitionIndex ( p_branch[ i + 1 ].Item1, p_branch [ i + 1 ].Item2 );
+				Transition trans = next.GetTransitionWithDestinationIdAndTransitionIndex ( p_branch [ i + 1 ].Item1, p_branch [ i + 1 ].Item2 );
 				switch ( trans.GetComparator ( ) ) {
 					case eTransitionComparisons.COMPARE_AGE:
 						trans.CreateAgeFromConditions ( ref person, Random );
 						break;
 					case eTransitionComparisons.COMPARE_DISORDERS:
 						trans.CreateDisordersFromConditions ( ref person );
+						break;
+					case eTransitionComparisons.COMPARE_BLOOD_PRESSURE:
+						break;
+					case eTransitionComparisons.COMPARE_GENDER:
+						break;
+					case eTransitionComparisons.COMPARE_RISK_FACTORS_DRINK:
+						break;
+					case eTransitionComparisons.COMPARE_RISK_FACTORS_SMOKE:
 						break;
 					default:
 						continue;
@@ -92,9 +100,11 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				Disorders.Add ( element.Value );
 			}
 
-			foreach ( XElement element in myXML.Element ( "variables" ).Elements ( ) ) {
-				Variables.Add ( new GraphVariable ( element.Attribute ( "name" ).Value,
-													element.Attribute ( "value" ).Value ) );
+			if ( myXML.Element ( "variables" ) != null ) {
+				foreach ( XElement element in myXML.Element ( "variables" ).Elements ( ) ) {
+					Variables.Add ( new GraphVariable ( element.Attribute ( "name" ).Value,
+						element.Attribute ( "value" ).Value ) );
+				}
 			}
 
 			foreach ( XElement element in myXML.Element ( "graph" ).Elements ( ) ) {
@@ -102,9 +112,9 @@ namespace MedicalDataGeneration.DecisionGraphs {
 					Node n = new Node ( int.Parse ( node.Attribute ( "id" ).Value ) );
 					foreach ( XElement transition in node.Elements ( "transition" ) ) {
 						Transition t = new Transition ( int.Parse ( transition.Attribute ( "index" ).Value ),
-										   int.Parse ( transition.Attribute ( "to" ).Value ),
-										   Transition.StringToTransitionComparison ( transition.Attribute ( "compare" ).Value ),
-										   transition.Attribute ( "condition" ).Value );
+							               int.Parse ( transition.Attribute ( "to" ).Value ),
+							               Transition.StringToTransitionComparison ( transition.Attribute ( "compare" ).Value ),
+							               transition.Attribute ( "condition" ).Value );
 						n.AddTransition ( t );
 					}
 
@@ -148,7 +158,7 @@ namespace MedicalDataGeneration.DecisionGraphs {
 
 				foreach ( string token in tokens ) {
 					string[ ] nodeTrans = token.Split ( ',' );
-					p.Add ( new Tuple<int, int> ( int.Parse ( nodeTrans[ 0 ] ), int.Parse ( nodeTrans[ 1 ] ) ) );
+					p.Add ( new Tuple<int, int> ( int.Parse ( nodeTrans [ 0 ] ), int.Parse ( nodeTrans [ 1 ] ) ) );
 				}
 
 				intPaths.Add ( p );
@@ -160,13 +170,13 @@ namespace MedicalDataGeneration.DecisionGraphs {
 		private List<Tuple<Node,Transition>> GetNodesWithTransitionsFrom ( Node p_node ) {
 			List<Tuple<Node, Transition>> myNodes = new List<Tuple<Node, Transition>> ( );
 			for ( int j = 0; j < p_node.Transitions.Count; j++ ) {
-				if ( p_node[ j ].GetTo ( ) == -1 ) {
-					myNodes.Add ( new Tuple<Node, Transition> ( Nodes[ Nodes.Count - 2 ], p_node.Transitions[ j ] ) );
-				} else if ( p_node[ j ].GetTo ( ) == -2 ) {
-					myNodes.Add ( new Tuple<Node, Transition> ( Nodes[ Nodes.Count - 1 ], p_node.Transitions[ j ] ) );
-				} else {
-					myNodes.Add ( new Tuple<Node, Transition> ( Nodes[ p_node[ j ].GetTo ( ) ], p_node.Transitions[ j ] ) );
-				}
+				if ( p_node [ j ].GetTo ( ) == -1 ) {
+					myNodes.Add ( new Tuple<Node, Transition> ( Nodes [ Nodes.Count - 2 ], p_node.Transitions [ j ] ) );
+				} else if ( p_node [ j ].GetTo ( ) == -2 ) {
+						myNodes.Add ( new Tuple<Node, Transition> ( Nodes [ Nodes.Count - 1 ], p_node.Transitions [ j ] ) );
+					} else {
+						myNodes.Add ( new Tuple<Node, Transition> ( Nodes [ p_node [ j ].GetTo ( ) ], p_node.Transitions [ j ] ) );
+					}
 			}
 
 			return myNodes;

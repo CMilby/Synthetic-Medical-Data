@@ -8,9 +8,11 @@ namespace MedicalDataGeneration {
 		HEAVY_DRINKER,
 		MODERATE_DRINKER,
 		LIGHT_DRINKER,
+		NON_DRINKER,
 		HEAVY_SMOKER,
 		MODERATE_SMOKER,
-		LIGHT_SMOKER
+		LIGHT_SMOKER,
+		NON_SMOKER
 	}
 
 	public class MedicalData {

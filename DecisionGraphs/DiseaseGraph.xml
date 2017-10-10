@@ -1,0 +1,67 @@
+<root>
+	<disorders>
+		<disorder>Disease 1</disorder>
+		<disorder>Disease 2</disorder>
+		<disorder>Disease 3</disorder>
+	</disorders>
+	<graph>
+		<level id="0">
+			<node id="0">
+				<transition index="0" compare="disorders" condition="Disease 1" to="1" />
+				<transition index="1" compare="disorders" condition="Disease 2" to="2" />
+				<transition index="2" compare="disorders" condition="Disease 3" to="3" />
+				<transition index="3" compare="disorders" condition="Other" to="-1" />
+			</node>
+		</level>
+		<level id="1">
+			<node id="1">
+				<transition index="0" compare="age" condition="&gt;=30" to="4" />
+				<transition index="1" compare="age" condition="&lt;30" to="-1" />
+			</node>
+			<node id="2">
+				<transition index="0" compare="age" condition="&gt;=30and&lt;50" to="5" />
+				<transition index="1" compare="age" condition="&gt;=50and&lt;30" to="-1" />
+			</node>
+			<node id="3">
+				<transition index="0" compare="age" condition="&lt;60" to="6" />
+				<transition index="1" compare="age" condition="&gt;=60" to="-1" />
+			</node>
+		</level>
+		<level id="2">
+			<node id="4">
+				<transition index="0" compare="blood_pressure" condition="high" to="7" />
+				<transition index="1" compare="blood_pressure" condition="" to="-1" />
+			</node>
+			<node id="5">
+				<transition index="0" compare="blood_pressure" condition="high" to="8" />
+				<transition index="1" compare="blood_pressure" condition="" to="-1" />
+			</node>
+			<node id="6">
+				<transition index="0" compare="blood_pressure" condition="high" to="8" />
+				<transition index="1" compare="blood_pressure" condition="" to="-1" />
+			</node>
+		</level>
+		<level id="3">
+			<node id="7">
+				<transition index="0" compare="risk_factor.smoke" condition="high" to="-1" />
+				<transition index="1" compare="risk_factor.smoke" condition="none" to="9" />
+				<transition index="2" compare="risk_factor.smoke" condition="" to="10" />
+			</node>
+			<node id="8">
+				<transition index="0" compare="risk_factor.drink" condition="high" to="-1" />
+				<transition index="1" compare="risk_factor.drink" condition="none" to="9" />
+				<transition index="2" compare="risk_factor.drink" condition="" to="10" />
+			</node>
+		</level>
+		<level id="4">
+			<node id="9">
+				<transition index="0" compare="gender" condition="male" to="-2" />
+				<transition index="1" compare="gender" condition="female" to="-2" />
+			</node>
+			<node id="10">
+				<transition index="0" compare="gender" condition="male" to="-2" />
+				<transition index="1" compare="gender" condition="female" to="-2" />
+			</node>
+		</level>
+	</graph>
+</root>

@@ -175,6 +175,25 @@ namespace MedicalDataGeneration {
 			MedData.Disorders.Add ( p_disorder );
 		}
 
+		public void AddRiskFactor ( eRiskFactor p_riskFactor ) {
+			MedData.RiskFactors.Add ( p_riskFactor );
+		}
+
+		public void GiveHighBloodPressure ( Random p_random ) {
+			MedData.Systolic = p_random.Next ( 120, 179 );
+			MedData.Diastolic = p_random.Next ( 80, 109 );
+		}
+
+		public void GiveNormalBloodPressure ( Random p_random ) {
+			MedData.Systolic = p_random.Next ( 90, 120 );
+			MedData.Diastolic = p_random.Next ( 60, 80 );
+		}
+
+		public void GiveLowBloodPressure ( Random p_random ) {
+			MedData.Systolic = p_random.Next ( 70, 90 );
+			MedData.Diastolic = p_random.Next ( 50, 60 );
+		}
+
 		private DateTime CreateDateOfBirth ( Random p_rand ) {
 			DateTime start = new DateTime ( 1940, 1, 1, 1, 1, 1 ); // First person can be born on January 1, 1940
 			int range = ( DateTime.Now.Subtract ( new TimeSpan ( 365 * 20, 0, 0, 0, 0 ) ) - start ).Days; // Everyone must be at least 20           

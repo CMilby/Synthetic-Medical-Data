@@ -1,11 +1,11 @@
 First,Middle,Last,Sex,Race,DoB,Age,Height,Weight,Percentile,PNum,SSN,Address,Town,State,Zip,Systolic,Diastolic,Risk_Factors,Disorders
-Geoffrey,Qivzqepx,Sierra,MALE,WHITE,01/20/2002,15,66,170,0.243834615042474,(000) 555-2346,000-33-6301,96986 Qafqbeqob AVE.,Cape Coral,Florida,33990,96,65,bipolar 1 disorder
-Donovan,Jagajsejsjas,Heller,MALE,WHITE,03/26/1968,49,70,218,0.60885925886341,(217) 555-4310,000-29-1978,46161 Jwjw CTR.,Springfield,Illinois,62703,122,86,major depressive disorder
-Aleida,Qoweqy,Bassett,FEMALE,WHITE,04/18/1977,40,67,152,0.186003965331309,(714) 555-5582,000-78-5334,10628 Ozqqn DR.,Huntington Beach,California,92647,116,66,schizophrenia
-Loren,Jsekq,Belcher,FEMALE,0,01/01/0001,2018,60,353,0.975771680191781,(602) 555-5187,000-47-2880,18405 Iqemqowqvvuw LN.,Phoenix,Arizona,85026,139,87,irritability associated with autistic disorder
+Geoffrey,Qivzqepx,Sierra,MALE,WHITE,05/24/1976,41,66,170,0.243834615042474,(000) 555-2346,000-33-6301,96986 Qafqbeqob AVE.,Cape Coral,Florida,33990,96,65,disease 1
+Donovan,Jagajsejsjas,Heller,MALE,WHITE,12/26/1965,51,70,218,0.60885925886341,(217) 555-4310,000-29-1978,46161 Jwjw CTR.,Springfield,Illinois,62703,122,86,disease 3
+Aleida,Qoweqy,Bassett,FEMALE,WHITE,11/22/1968,48,67,152,0.186003965331309,(714) 555-5582,000-78-5334,10628 Ozqqn DR.,Huntington Beach,California,92647,116,66,disease 2
+Loren,Jsekq,Belcher,FEMALE,0,01/01/0001,2018,60,353,0.975771680191781,(602) 555-5187,000-47-2880,18405 Iqemqowqvvuw LN.,Phoenix,Arizona,85026,139,87,disease 3
 Maxine,Qweqan,Hernandez,FEMALE,0,01/01/0001,2018,62,110,0.0188517571166917,(000) 555-4340,000-96-7614,55254 Azjqb BLVD.,Moreno Valley,California,92553,113,68,
-Rashida,Jcevwjaq,Caldwell,FEMALE,WHITE,12/03/1998,18,61,172,0.26939986408621,(859) 555-6393,000-92-3005,87761 Vtquzxx PL.,Lexington,Kentucky,40511,106,73,major depressive disorder
-Janey,Bxaqokqemejz,Greer,FEMALE,WHITE,07/05/1975,42,63,169,0.415448806279268,(000) 555-3908,000-97-2604,14444 Gqjgqaj CTR.,El Monte,California,91734,134,88,major depressive disorder
-Kenneth,Coxiqlqvojc,Cook,FEMALE,WHITE,04/06/1978,39,60,139,0.20397406739295,(321) 555-5884,000-92-2775,39110 Jswoxujav LN.,Orlando,Florida,32802,94,64,schizophrenia
-Elda,Gxvqoqev,Walters,FEMALE,WHITE,03/27/1983,34,61,177,0.805386742479142,(000) 555-0830,000-31-1394,24326 Qdqucamx AVE.,Independence,Missouri,64052,127,82,schizophrenia
-Sade,Jqqvejvqup,Parham,FEMALE,0,01/01/0001,2018,58,133,0.139872211376736,(209) 555-7624,000-20-1817,70136 Eqtgxqg ST.,Stockton,California,95208,106,69,tourette's disorder
+Rashida,Jcevwjaq,Caldwell,FEMALE,WHITE,11/12/1986,30,61,172,0.26939986408621,(859) 555-6393,000-92-3005,87761 Vtquzxx PL.,Lexington,Kentucky,40511,106,73,disease 1
+Janey,Bxaqokqemejz,Greer,FEMALE,WHITE,11/06/1960,56,63,169,0.415448806279268,(000) 555-3908,000-97-2604,14444 Gqjgqaj CTR.,El Monte,California,91734,134,88,disease 1
+Kenneth,Coxiqlqvojc,Cook,FEMALE,WHITE,08/01/1969,48,60,139,0.20397406739295,(321) 555-5884,000-92-2775,39110 Jswoxujav LN.,Orlando,Florida,32802,94,64,disease 2
+Elda,Gxvqoqev,Walters,FEMALE,WHITE,02/18/1973,44,61,177,0.805386742479142,(000) 555-0830,000-31-1394,24326 Qdqucamx AVE.,Independence,Missouri,64052,127,82,disease 2
+Sade,Jqqvejvqup,Parham,FEMALE,0,01/01/0001,2018,58,133,0.139872211376736,(209) 555-7624,000-20-1817,70136 Eqtgxqg ST.,Stockton,California,95208,106,69,disease 3

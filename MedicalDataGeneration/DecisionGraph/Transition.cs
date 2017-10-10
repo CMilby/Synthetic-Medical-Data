@@ -6,13 +6,18 @@ namespace MedicalDataGeneration.DecisionGraphs {
 		COMPARE_DISORDERS,
 		COMPARE_AGE,
 		COMPARE_VARIABLES,
+		COMPARE_BLOOD_PRESSURE,
+		COMPARE_RISK_FACTORS_SMOKE,
+		COMPARE_RISK_FACTORS_DRINK,
+		COMPARE_GENDER,
 		COMPARE_NONE
 	}
 
 	public class Transition : IComparable {
 
 		private int Index;
-		private int To; // -1 == deny, -2 == approve
+		private int To;
+		// -1 == deny, -2 == approve
 		private eTransitionComparisons Comparisons;
 		private string Conditions;
 
@@ -43,6 +48,14 @@ namespace MedicalDataGeneration.DecisionGraphs {
 					return CompareDisorder ( p_person, Conditions );
 				case eTransitionComparisons.COMPARE_VARIABLES:
 					return CompareVariables ( );
+				case eTransitionComparisons.COMPARE_GENDER:
+					return CompareGender ( p_person );
+				case eTransitionComparisons.COMPARE_RISK_FACTORS_DRINK:
+					return CompareRiskFactorDrinking ( p_person );
+				case eTransitionComparisons.COMPARE_RISK_FACTORS_SMOKE:
+					return CompareRiskFactorSmoking ( p_person );
+				case eTransitionComparisons.COMPARE_BLOOD_PRESSURE:
+					return CompareBloodPressure ( p_person );
 				default:
 					return false;
 			}
@@ -58,8 +71,77 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				case "variables":
 				case "variable":
 					return eTransitionComparisons.COMPARE_VARIABLES;
+				case "gender":
+				case "sex:":
+					return eTransitionComparisons.COMPARE_GENDER;
+				case "blood_pressure":
+					return eTransitionComparisons.COMPARE_BLOOD_PRESSURE;
+				case "risk_factors.smoke":
+					return eTransitionComparisons.COMPARE_RISK_FACTORS_SMOKE;
+				case "risk_factors.drink":
+					return eTransitionComparisons.COMPARE_RISK_FACTORS_DRINK;
 				default:
-					return eTransitionComparisons.COMPARE_NONE;	
+					return eTransitionComparisons.COMPARE_NONE;
+			}
+		}
+
+		private bool CompareBloodPressure ( Person p_person ) {
+			return false;
+		}
+
+		private bool CompareRiskFactorSmoking ( Person p_person ) {
+			return false;
+		}
+
+		private bool CompareRiskFactorDrinking ( Person p_person ) {
+			return false;
+		}
+
+		private bool CompareGender ( Person p_person ) {
+			return false;
+		}
+
+		private void CreateBloodPressureFromCondition ( ref Person p_person, Random p_random ) {
+			if ( Conditions.Equals ( "high" ) ) {
+				p_person.GiveHighBloodPressure ( p_random );
+			} else if ( Conditions.Equals ( "normal" ) ) {
+				p_person.GiveNormalBloodPressure ( p_random );
+			} else if ( Conditions.Equals ( "low" ) ) {
+				p_person.GiveLowBloodPressure ( p_random );
+			} else {
+				p_person.GiveNormalBloodPressure ( p_random );
+			}
+ 		}
+
+		private void CreateRiskFactorSmokeFromCondition ( ref Person p_person ) {
+			if ( Conditions.Equals ( "high" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.HEAVY_SMOKER );
+			} else if ( Conditions.Equals ( "moderate" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.MODERATE_SMOKER );
+			} else if ( Conditions.Equals ( "low" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.LIGHT_SMOKER );
+			} else {
+				p_person.AddRiskFactor ( eRiskFactor.NON_SMOKER );
+			}
+		}
+
+		private void CreateRiskFactorDrinkFromCondition ( ref Person p_person ) {
+			if ( Conditions.Equals ( "high" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.HEAVY_DRINKER );
+			} else if ( Conditions.Equals ( "moderate" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.MODERATE_DRINKER );
+			} else if ( Conditions.Equals ( "low" ) ) {
+				p_person.AddRiskFactor ( eRiskFactor.LIGHT_DRINKER );
+			} else {
+				p_person.AddRiskFactor ( eRiskFactor.NON_DRINKER );
+			}
+		}
+
+		private void CreateGenderFromCondition ( ref Person p_person ) {
+			if ( Conditions.Equals ( "male" ) ) {
+				p_person.Sex = eSex.MALE;
+			} else if ( Conditions.Equals ( "female" ) ) {
+				p_person.Sex = eSex.FEMALE;
 			}
 		}
 
@@ -74,22 +156,22 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				if ( cond1.Contains ( ">=" ) ) {
 					val0 = int.Parse ( cond1.Replace ( ">=", "" ) );
 				} else if ( cond1.Contains ( ">" ) ) {
-					val0 = int.Parse ( cond1.Replace ( ">", "" ) );
-				}
-					
+						val0 = int.Parse ( cond1.Replace ( ">", "" ) );
+					}
+
 				if ( cond2.Contains ( "<=" ) ) {
 					val1 = int.Parse ( cond2.Replace ( "<=", "" ) );
 				} else if ( cond2.Contains ( "<" ) ) {
-					val1 = int.Parse ( cond2.Replace ( "<", "" ) );
-				}
+						val1 = int.Parse ( cond2.Replace ( "<", "" ) );
+					}
 
 				if ( val0 > val1 ) {
 					p_person.CreateDateOfBirthOutOfRange ( p_random, val1, val0 );
 				} else if ( val0 < val1 ) {
-					p_person.CreateDateOfBirthInRange ( p_random, val0, val1 );
-				} else {
-					throw new NotImplementedException ( "Error: Age equal to not implemented" );
-				}
+						p_person.CreateDateOfBirthInRange ( p_random, val0, val1 );
+					} else {
+						throw new NotImplementedException ( "Error: Age equal to not implemented" );
+					}
 			} else {
 				int value = -1;
 				if ( Conditions.Contains ( ">=" ) ) {
@@ -100,29 +182,29 @@ namespace MedicalDataGeneration.DecisionGraphs {
 						p_person.CreateDateOfBirthLessThanAge ( p_random, value - 1 );
 					}
 				} else if ( Conditions.Contains ( "<=" ) ) {
-					value = int.Parse ( Conditions.Replace ( "<=", "" ) );
-					if ( p_inRange ) {
-						p_person.CreateDateOfBirthLessThanAge ( p_random, value );
-					} else {
-						p_person.CreateDateOfBirthGreaterThanAge ( p_random, value + 1 );
-					}
-				} else if ( Conditions.Contains ( ">" ) ) {
-					value = int.Parse ( Conditions.Replace ( ">", "" ) );
-					if ( p_inRange ) {
-						p_person.CreateDateOfBirthGreaterThanAge ( p_random, value + 1 );
-					} else {
-						p_person.CreateDateOfBirthLessThanAge ( p_random, value );
-					}
-				} else if ( Conditions.Contains ( "<" ) ) {
-					value = int.Parse ( Conditions.Replace ( "<", "" ) );
-					if ( p_inRange ) {
-						p_person.CreateDateOfBirthLessThanAge ( p_random, value - 1 );
-					} else {
-						p_person.CreateDateOfBirthGreaterThanAge ( p_random, value );
-					}
-				} else if ( Conditions.Contains ( "==" ) ) {
-					throw new NotImplementedException ( "Error: Age equal to not implemented" );
-				}
+						value = int.Parse ( Conditions.Replace ( "<=", "" ) );
+						if ( p_inRange ) {
+							p_person.CreateDateOfBirthLessThanAge ( p_random, value );
+						} else {
+							p_person.CreateDateOfBirthGreaterThanAge ( p_random, value + 1 );
+						}
+					} else if ( Conditions.Contains ( ">" ) ) {
+							value = int.Parse ( Conditions.Replace ( ">", "" ) );
+							if ( p_inRange ) {
+								p_person.CreateDateOfBirthGreaterThanAge ( p_random, value + 1 );
+							} else {
+								p_person.CreateDateOfBirthLessThanAge ( p_random, value );
+							}
+						} else if ( Conditions.Contains ( "<" ) ) {
+								value = int.Parse ( Conditions.Replace ( "<", "" ) );
+								if ( p_inRange ) {
+									p_person.CreateDateOfBirthLessThanAge ( p_random, value - 1 );
+								} else {
+									p_person.CreateDateOfBirthGreaterThanAge ( p_random, value );
+								}
+							} else if ( Conditions.Contains ( "==" ) ) {
+									throw new NotImplementedException ( "Error: Age equal to not implemented" );
+								}
 			}
 		}
 
@@ -139,14 +221,14 @@ namespace MedicalDataGeneration.DecisionGraphs {
 				if ( p_condition.Contains ( ">=" ) ) {
 					return p_person.GetAge ( ) >= int.Parse ( p_condition.Replace ( ">=", "" ) );
 				} else if ( p_condition.Contains ( "<=" ) ) {
-					return p_person.GetAge ( ) <= int.Parse ( p_condition.Replace ( "<=", "" ) );
-				} else if ( p_condition.Contains ( "<" ) ) {
-					return p_person.GetAge ( ) < int.Parse ( p_condition.Replace ( "<", "" ) );
-				} else if ( p_condition.Contains ( ">" ) ) {
-					return p_person.GetAge ( ) > int.Parse ( p_condition.Replace ( ">", "" ) );
-				} else if ( p_condition.Contains ( "==" ) ) {
-					return p_person.GetAge ( ) == int.Parse ( p_condition.Replace ( "==", "" ) );
-				}
+						return p_person.GetAge ( ) <= int.Parse ( p_condition.Replace ( "<=", "" ) );
+					} else if ( p_condition.Contains ( "<" ) ) {
+							return p_person.GetAge ( ) < int.Parse ( p_condition.Replace ( "<", "" ) );
+						} else if ( p_condition.Contains ( ">" ) ) {
+								return p_person.GetAge ( ) > int.Parse ( p_condition.Replace ( ">", "" ) );
+							} else if ( p_condition.Contains ( "==" ) ) {
+									return p_person.GetAge ( ) == int.Parse ( p_condition.Replace ( "==", "" ) );
+								}
 			}
 
 			return false;
