@@ -43,12 +43,12 @@
 		</level>
 		<level id="3">
 			<node id="7">
-				<transition index="0" compare="risk_factor.smoke" condition="high" to="-1" />
+				<transition index="0" compare="risk_factor.smoke" condition="high" to="-3" />
 				<transition index="1" compare="risk_factor.smoke" condition="none" to="9" />
 				<transition index="2" compare="risk_factor.smoke" condition="" to="10" />
 			</node>
 			<node id="8">
-				<transition index="0" compare="risk_factor.drink" condition="high" to="-1" />
+				<transition index="0" compare="risk_factor.drink" condition="high" to="-3" />
 				<transition index="1" compare="risk_factor.drink" condition="none" to="9" />
 				<transition index="2" compare="risk_factor.drink" condition="" to="10" />
 			</node>
@@ -56,11 +56,21 @@
 		<level id="4">
 			<node id="9">
 				<transition index="0" compare="gender" condition="male" to="-2" />
-				<transition index="1" compare="gender" condition="female" to="-2" />
+				<transition index="1" compare="gender" condition="female" to="11" />
 			</node>
 			<node id="10">
 				<transition index="0" compare="gender" condition="male" to="-2" />
-				<transition index="1" compare="gender" condition="female" to="-2" />
+				<transition index="1" compare="gender" condition="female" to="12" />
+			</node>
+		</level>
+		<level id="5">
+			<node id="11">
+				<transition index="0" compare="pregnant" condition="true" to="-2" />
+				<transition index="1" compare="pregnant" condition="false" to="-2" />
+			</node>
+			<node id="12">
+				<transition index="0" compare="pregnant" condition="true" to="-3" />
+				<transition index="1" compare="pregnant" condition="false" to="-3" />
 			</node>
 		</level>
 	</graph>

@@ -1,5 +1,6 @@
 ﻿using System;
-using System.IO;
+
+using MedicalDataGeneration.DecisionGraphs;
 
 namespace MedicalDataGeneration {
 
@@ -14,8 +15,32 @@ namespace MedicalDataGeneration {
 				new DataInjector ( 1500, eRiskFactor.HEAVY_SMOKER, eRiskFactor.HEAVY_DRINKER ) );
 			// new SyntheticDataGenerator ( numLines, myPath, new DataInjector ( 10000, 145, 55 ) );*/
 
-			new MedicalDataGeneration.DecisionGraphs.DecisionGraph ( "C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\DiseaseGraph.xml", 
-					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\", 10, 1234L );
+			new GraphDataGenerator ( 
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\DiseaseGraph.xml", 
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Each.csv", 
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Each_Key.key", 
+					eGraphGenertorType.GENERATOR_TYPE_EACH,
+					p_seed: 1234 );
+			Console.WriteLine ( "Generated Each" );
+
+			new GraphDataGenerator (
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\DiseaseGraph.xml",
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Random_100.csv",
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Random_100_Key.key",
+					eGraphGenertorType.GENERATOR_TYPE_RANDOM,
+					p_numLines: 100,
+					p_seed: 1234 );
+			Console.WriteLine ( "Generated Random 100" );
+
+			new GraphDataGenerator (
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\DecisionGraphs\\DiseaseGraph.xml",
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Random_100000.csv",
+					"C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\Data_Random_100000_Key.key",
+					eGraphGenertorType.GENERATOR_TYPE_RANDOM,
+					p_numLines: 100000,
+					p_seed: 1234 );
+			Console.WriteLine ( "Generated Random 100000" );
+
 			Console.ReadLine ( );
 		}
 	}

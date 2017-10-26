@@ -22,11 +22,15 @@ namespace MedicalDataGeneration {
 		public int Systolic;
 		public int Diastolic;
 
+		public bool IsPregnant;
+
 		public List<string> Disorders;
 
 		public MedicalData ( Person p_person, Random p_random, params eRiskFactor[] p_riskFactors ) {
 			RiskFactors = new List<eRiskFactor> ( p_riskFactors );
 			GenerateBloodPressure ( p_person, RiskFactors, p_random, out Systolic, out Diastolic );
+
+			IsPregnant = false;
 
 			Disorders = new List<string> ( );
 		}
@@ -37,12 +41,16 @@ namespace MedicalDataGeneration {
 			Systolic = p_systolic;
 			Diastolic = p_diastolic;
 
+			IsPregnant = false;
+
 			Disorders = new List<string> ( );
 		}
 
 		public MedicalData ( Random p_random, Person p_person, List<string> p_disorders ) {
 			RiskFactors = new List<eRiskFactor> ( );
 			GenerateBloodPressure ( p_person, new List<eRiskFactor> ( ), p_random, out Systolic, out Diastolic );
+
+			IsPregnant = false;
 
 			Disorders = p_disorders;
 		}
