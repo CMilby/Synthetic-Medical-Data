@@ -1,0 +1,25 @@
+<root>
+	<disorders>
+		<disorder>Disease 1</disorder>
+	</disorders>
+	<graph>
+		<level id="0">
+			<node id="0">
+				<transition index="0" compare="disorders" condition="Disease 1" to="1" />
+				<transition index="1" compare="disorders" condition="Other" to="-1" />
+			</node>
+		</level>
+		<level id="1">
+			<node id="1">
+				<transition index="0" compare="age" condition="&lt;30" to="-1" />
+				<transition index="1" compare="age" condition="&gt;=30" to="2" />
+			</node>
+		</level>
+		<level id="2">
+			<node id="2">
+				<transition index="0" compare="age" condition="&lt;=60" to="-2" />
+				<transition index="1" compare="age" condition="&gt;60" to="-3" />
+			</node>
+		</level>
+	</graph>
+</root>

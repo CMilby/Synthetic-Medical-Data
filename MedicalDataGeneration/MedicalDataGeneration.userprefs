@@ -4,17 +4,18 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DecisionGraph\Transition.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="DecisionGraph\DecisionGraph.cs" Line="1" Column="1" />
-      <File FileName="DecisionGraph\Transition.cs" Line="206" Column="24" />
-      <File FileName="Person\Person.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="33" Column="38" />
+      <File FileName="DecisionGraph\DecisionGraph.cs" Line="32" Column="4" />
+      <File FileName="DecisionGraph\Transition.cs" Line="190" Column="32" />
+      <File FileName="Person\Person.cs" Line="11" Column="2" />
       <File FileName="DecisionGraph\Node.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="1" Column="1" />
       <File FileName="Util\ListUtil.cs" Line="1" Column="1" />
-      <File FileName="Person\MedicalData.cs" Line="1" Column="1" />
-      <File FileName="DecisionGraph\GraphVariable.cs" Line="1" Column="1" />
-      <File FileName="Data_Generator\SyntheticDataGenerator.cs" Line="1" Column="1" />
+      <File FileName="Person\MedicalData.cs" Line="83" Column="3" />
+      <File FileName="DecisionGraph\GraphDataGenerator.cs" Line="5" Column="26" />
+      <File FileName="Person\Address.cs" Line="1" Column="1" />
+      <File FileName="Person\Street.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MedicalDataGeneration PreferredExecutionTarget="MonoDevelop.Default" />

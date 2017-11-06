@@ -81,6 +81,28 @@ namespace MedicalDataGeneration {
 			return ret; 
 		}
 
+		public string RiskFactorsToString ( ) {
+			string ret = "";
+			for ( int i = 0; i < RiskFactors.Count; i++ ) {
+				ret += RiskFactors [ i ] + "|";
+			}
+			if ( ret.EndsWith ( "|" ) ) {
+				ret = ret.Substring ( 0, ret.Length - 1 );
+			}
+			return ret;
+		}
+
+		public string DisordersToString ( ) {
+			string ret = "";
+			for ( int i = 0; i < Disorders.Count; i++ ) {
+				ret += Disorders [ i ] + "|";
+			}
+			if ( ret.EndsWith ( "|" ) ) {
+				ret = ret.Substring ( 0, ret.Length - 1 );
+			}
+			return ret;
+		}
+
 		public bool HasDisorder ( string p_disorder ) {
 			return Disorders.Contains ( p_disorder );
 		}
@@ -120,18 +142,18 @@ namespace MedicalDataGeneration {
 			if ( p_riskFactors.Contains ( eRiskFactor.HEAVY_SMOKER ) ) {
 				likelehood += 0.35f;
 			} else if ( p_riskFactors.Contains ( eRiskFactor.MODERATE_SMOKER ) ) {
-				likelehood += 0.20f;
-			} else if ( p_riskFactors.Contains ( eRiskFactor.LIGHT_SMOKER ) ) {
-				likelehood += 0.05f;
-			}
+					likelehood += 0.20f;
+				} else if ( p_riskFactors.Contains ( eRiskFactor.LIGHT_SMOKER ) ) {
+						likelehood += 0.05f;
+					}
 
 			if ( p_riskFactors.Contains ( eRiskFactor.HEAVY_DRINKER ) ) {
 				likelehood += 0.35f;
 			} else if ( p_riskFactors.Contains ( eRiskFactor.MODERATE_DRINKER ) ) {
-				likelehood += 0.20f;
-			} else if ( p_riskFactors.Contains ( eRiskFactor.LIGHT_DRINKER ) ) {
-				likelehood += 0.05f;
-			}
+					likelehood += 0.20f;
+				} else if ( p_riskFactors.Contains ( eRiskFactor.LIGHT_DRINKER ) ) {
+						likelehood += 0.05f;
+					}
 
 			bool high = false;
 			if ( p_person.Sex == eSex.MALE ) {
@@ -139,42 +161,42 @@ namespace MedicalDataGeneration {
 					likelehood += 0.091;
 					high = p_random.NextDouble ( ) < likelehood;
 				} else if ( age < 44 ) {
-					likelehood += 0.244;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 54 ) {
-					likelehood += 0.377;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 64 ) {
-					likelehood += 0.52;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 74 ) {
-					likelehood += 0.639;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else {
-					likelehood += 0.721;
-					high = p_random.NextDouble ( ) < likelehood;
-				}
+						likelehood += 0.244;
+						high = p_random.NextDouble ( ) < likelehood;
+					} else if ( age < 54 ) {
+							likelehood += 0.377;
+							high = p_random.NextDouble ( ) < likelehood;
+						} else if ( age < 64 ) {
+								likelehood += 0.52;
+								high = p_random.NextDouble ( ) < likelehood;
+							} else if ( age < 74 ) {
+									likelehood += 0.639;
+									high = p_random.NextDouble ( ) < likelehood;
+								} else {
+									likelehood += 0.721;
+									high = p_random.NextDouble ( ) < likelehood;
+								}
 			} else if ( p_person.Sex == eSex.FEMALE ) {
-				if ( age < 34 ) {
-					likelehood += 0.067;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 44 ) {
-					likelehood += 0.176;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 54 ) {
-					likelehood += 0.34;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 64 ) {
-					likelehood += 0.52;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else if ( age < 74 ) {
-					likelehood += 0.708;
-					high = p_random.NextDouble ( ) < likelehood;
-				} else {
-					likelehood += 0.801;
-					high = p_random.NextDouble ( ) < likelehood;
+					if ( age < 34 ) {
+						likelehood += 0.067;
+						high = p_random.NextDouble ( ) < likelehood;
+					} else if ( age < 44 ) {
+							likelehood += 0.176;
+							high = p_random.NextDouble ( ) < likelehood;
+						} else if ( age < 54 ) {
+								likelehood += 0.34;
+								high = p_random.NextDouble ( ) < likelehood;
+							} else if ( age < 64 ) {
+									likelehood += 0.52;
+									high = p_random.NextDouble ( ) < likelehood;
+								} else if ( age < 74 ) {
+										likelehood += 0.708;
+										high = p_random.NextDouble ( ) < likelehood;
+									} else {
+										likelehood += 0.801;
+										high = p_random.NextDouble ( ) < likelehood;
+									}
 				}
-			}
 
 			if ( p_person.Race == eRace.AFRICAN_AMERICAN && p_random.NextDouble ( ) > 0.9 ) {
 				high = true;
