@@ -35,6 +35,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clinic\ClinicGenerator.cs" />
+    <Compile Include="Clinic\Column.cs" />
+    <Compile Include="Clinic\ConstantColumn.cs" />
+    <Compile Include="Clinic\DoctorColumn.cs" />
+    <Compile Include="Clinic\EmptyColumn.cs" />
+    <Compile Include="Clinic\IncrementalColumn.cs" />
+    <Compile Include="Clinic\MultivalueColumn.cs" />
+    <Compile Include="Clinic\PatientColumn.cs" />
     <Compile Include="Constraints\PersonConstraints.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,8 +67,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="DecisionGraph\" />
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
