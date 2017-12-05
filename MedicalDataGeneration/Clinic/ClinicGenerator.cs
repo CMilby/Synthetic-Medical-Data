@@ -9,104 +9,107 @@ namespace MedicalDataGeneration.Clinic {
 		public ClinicGenerator ( string p_outFile, int p_numLines, long p_seed ) {
 			Random = new Random ( p_seed );
 
+			HospitalColumnPool.Init ( 5, Random );
 			Generate ( p_outFile, p_numLines );
 		}
 
-		private Column[] GenColumns ( Random p_random ) {
-			PatientColumn patient = new PatientColumn ( Random );
-			DoctorColumn attendingDoctor = new DoctorColumn ( Random, "Attending" );
-			DoctorColumn orderingDoctor = new DoctorColumn ( Random, "Ordering" );
+		private Column[] GenColumns ( Random p_random, PatientColumn p_patient, DoctorColumn p_attendingDoctor, DoctorColumn p_orderingDoctor ) {
+			HospitalColumn hospital = HospitalColumnPool.GetHospital ( p_random );
+			DoctorColumn firstReading = new DoctorColumn ( p_random, "FirstReading" );
+			DoctorColumn firstAttending = new DoctorColumn ( p_random, "FirstAddending" );
+			ProcedureColumn procedure = new ProcedureColumn ( p_random );
+			DateGeneratorColumn dates = new DateGeneratorColumn ( p_random );
 
 			Column [ ] columns = new Column [ ] {
-				patient [ PatientColumn.ePatientColumns.FIRST_NAME ],
+				p_patient [ PatientColumn.ePatientColumns.FIRST_NAME ],
 				new EmptyColumn ( "FirstAddendingFirstName" ),
 				new RandomFillColumn ( "TechnicalAccountingUnit", 0.35f, p_random, new RandomNumberColumn ( "TechnicalAccountingUnit", p_random, 100000, 999999, 6 ) ),
 				new RandomFillColumn ( "LastSigningEmployeeTypeId", 0.5f, p_random, new ConstantColumn ( "LastSigningEmployeeTypeId", "10" ) ),
 				new RandomFillColumn ( "CancelDescription", 0.2f, p_random, new ConstantColumn ( "CancelDescription", "MISCELLANEOUS" ) ),
 				new ConstantColumn ( "Type", "Study" ),
-				new EmptyColumn ( "ProcedureSubspeciality" ), // TODO
-				orderingDoctor [ DoctorColumn.eDoctorColumns.NPI ],
+				new EmptyColumn ( "ProcedureSubspeciality" ),
+				p_orderingDoctor [ DoctorColumn.eDoctorColumns.NPI ],
 				new ConstantColumn ( "ProcedureReason", "Test" ),
 				new RandomFillColumn ( "FirstAddendingEmployeeTypeDescription", 0.1f, p_random, new ConstantColumn ( "FirstAddendingEmployeeTypeDescription", "Staff" ) ),
 				new IncrementalColumn ( "ID", 100000 ),
-				patient [ PatientColumn.ePatientColumns.DATE_OF_BIRTH ],
+				p_patient [ PatientColumn.ePatientColumns.DATE_OF_BIRTH ],
 				new EmptyColumn ( "LateralityDescription" ),
 				new ConstantColumn ( "IsReportable", "1" ),
-				new EmptyColumn ( "MRNAssigningAuthority" ),
-				new EmptyColumn ( "FirstReadingEmployeeTypeDescription" ),
-				new EmptyColumn ( "LeftDepartmentDateTime" ),
-				new EmptyColumn ( "IsFamilyHealthCenter" ),
+				new RandomFillColumn ( "MRNAssigningAuthority", 0.5f, p_random, new ConstantColumn ( "MRNAssigningAuthority", "CCF" ) ),
+				new RandomFillColumn ( "FirstReadingEmployeeTypeDescription", 0.5f, p_random, new ConstantColumn ( "FirstReadingEmployeeTypeDescription", "Staff" ) ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.LEFT_DEPT_DATE_TIME ],
+				new ConstantColumn ( "IsFamilyHealthCenter", "FALSE" ),
 				new EmptyColumn ( "Impression" ),
-				new EmptyColumn ( "LastSigningEmployeeTypeDescription" ),
-				new EmptyColumn ( "OrderingDoctorNumber" ),
-				new EmptyColumn ( "LastSigningDateTime" ),
+				new RandomFillColumn ( "LastSigningEmployeeTypeDescription", 0.5f, p_random, new ConstantColumn ( "LastSigningEmployeeTypeDescription", "Staff" ) ),
+				p_orderingDoctor [ DoctorColumn.eDoctorColumns.NUMBER ],
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.LAST_SIGNING_DATE_TIME ],
 				new EmptyColumn ( "FirstReadingLastName" ),
-				new EmptyColumn ( "HospitalCode" ),
+				hospital [ HospitalColumn.eHospitalColumns.CODE ],
 				new EmptyColumn ( "FirstAddendingEmployeeTypeID" ),
-				orderingDoctor [ DoctorColumn.eDoctorColumns.LAST_NAME ],
-				new EmptyColumn ( "EnterDepartmentDateTime" ),
-				patient [ PatientColumn.ePatientColumns.LAST_NAME ],
+				p_orderingDoctor [ DoctorColumn.eDoctorColumns.LAST_NAME ],
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.ENTER_DEPT_DATE_TIME ],
+				p_patient [ PatientColumn.ePatientColumns.LAST_NAME ],
 				new EmptyColumn ( "OrderingDoctorMiddleName" ),
-				new EmptyColumn ( "HospitalDescription" ),
-				new EmptyColumn ( "ProcedureCode" ),
+				hospital [ HospitalColumn.eHospitalColumns.DESCRIPTION ],
+				procedure [ ProcedureColumn.eProcedureColumns.PROCEDURE_CODE ],
 				new EmptyColumn ( "LateralityCode" ),
 				new EmptyColumn ( "LastSigningNPI" ),
-				patient [ PatientColumn.ePatientColumns.SEX ],
+				p_patient [ PatientColumn.ePatientColumns.SEX ],
 				new EmptyColumn ( "AttendingDoctorMiddleName" ),
-				new EmptyColumn ( "MRN" ),
+				p_patient [ PatientColumn.ePatientColumns.MRN ],
 				new EmptyColumn ( "PatientClassCode" ),
-				new EmptyColumn ( "FirstSigningDateTime" ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.FIRST_READING_DATE_TIME ],
 				new EmptyColumn ( "LastSigningFirstName" ),
 				new EmptyColumn ( "FirstSigningMiddleName" ),
 				new EmptyColumn ( "FirstAddendingNPI" ),
-				new EmptyColumn ( "ProcedureDescription" ),
-				new EmptyColumn ( "EnterpriseMRN" ),
-				patient [ PatientColumn.ePatientColumns.AGE_END ],
+				procedure [ ProcedureColumn.eProcedureColumns.PROCEDURE_DESCRIPTION ],
+				new ConstantColumn ( "EnterpriseMRN", "E" + p_patient.GetMRN ( ).Generate ( ) ),
+				p_patient [ PatientColumn.ePatientColumns.AGE_END ],
 				new EmptyColumn ( "FirstReadingMiddleName" ),
-				new EmptyColumn ( "DepartmentKey" ),
-				new EmptyColumn ( "Accession" ),
-				new EmptyColumn ( "OrderedForDateTime" ),
+				new RandomNumberColumn ( "DepartmentKey", p_random, 1000, 9999 ),
+				new IncrementalColumn ( "Accession", 100000 ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.ORDERED_FOR_DATE_TIME ],
 				new EmptyColumn ( "LastSigningMiddleName" ),
-				new EmptyColumn ( "StudyTypeCPTCode" ),
-				new EmptyColumn ( "FirstReadingDateTime" ),
-				new EmptyColumn ( "BeginProcedureDateTime" ),
-				new EmptyColumn ( "FirstAddendingLastName" ),
-				new EmptyColumn ( "BodyPart" ),
+				new RandomFillColumn ( "StudyTypeCPTCode", 0.75f, p_random, new RandomNumberColumn ( "StudyTypeCPTCode", p_random, 10000, 99999 ) ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.FIRST_READING_DATE_TIME ],
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.BEGIN_PROCEDURE_DATE_TIME ],
+				p_attendingDoctor [ DoctorColumn.eDoctorColumns.LAST_NAME ],
+				procedure [ ProcedureColumn.eProcedureColumns.BODY_PART ],
 				new EmptyColumn ( "TotalImagesWithinStudy" ),
 				new EmptyColumn ( "FirstReadingNPI" ),
-				new EmptyColumn ( "FirstAddendumDateTime" ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.FIRST_ADDENDUM_DATE_TIME ],
 				new EmptyColumn ( "PatientClassDescription" ),
 				new EmptyColumn ( "FirstSigningEmployeeTypeID" ),
-				new EmptyColumn ( "ModalityDescription" ),
+				procedure [ ProcedureColumn.eProcedureColumns.MODE_DESCRIPTION ],
 				new EmptyColumn ( "FirstReadingDoctorKey" ),
 				new EmptyColumn ( "LastSigningDoctorKey" ),
 				new EmptyColumn ( "FirstAddendingMiddleName" ),
 				new EmptyColumn ( "ResourceKey" ),
 				new EmptyColumn ( "AttendingDoctorNPI" ),
-				new EmptyColumn ( "OriginalOrderedOnDateTime" ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.ORIGINAL_ORDERED_ON_DATE_TIME ],
 				new EmptyColumn ( "FirstReadingEmployeeTypeID" ),
-				attendingDoctor [ DoctorColumn.eDoctorColumns.FIRST_NAME ],
+				p_attendingDoctor [ DoctorColumn.eDoctorColumns.FIRST_NAME ],
 				new EmptyColumn ( "AttendingDoctorNumber" ),
 				new EmptyColumn ( "FirstSigningNPI" ),
 				new EmptyColumn ( "OrderingDoctorSKey" ),
 				new EmptyColumn ( "DepartmentLongName" ),
 				new EmptyColumn ( "FirstSigningEmployeeTypeDescription" ),
-				orderingDoctor [ DoctorColumn.eDoctorColumns.FIRST_NAME ],
-				new EmptyColumn ( "ModalityCode" ),
+				p_orderingDoctor [ DoctorColumn.eDoctorColumns.FIRST_NAME ],
+				procedure [ ProcedureColumn.eProcedureColumns.MODE_CODE ],
 				new EmptyColumn ( "FirstSigningLastName" ),
 				new EmptyColumn ( "ProcedurePriority" ),
-				new EmptyColumn ( "StudySKey" ),
-				new EmptyColumn ( "ProcedureIsActive" ),
+				new RandomNumberColumn ( "StudySKey", p_random, 100, 10000 ),
+				new ConstantColumn ( "ProcedureIsActive", "0" ),
 				new EmptyColumn ( "FirstSigningDoctorKey" ),
-				new EmptyColumn ( "EndProcedureDateTime" ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.END_PROCEDURE_DATE_TIME ],
 				new EmptyColumn ( "DepartmentCode" ),
 				new EmptyColumn ( "ResourceCode" ),
 				new EmptyColumn ( "AttendingDoctorSKey" ),
-				new EmptyColumn ( "OrderedOnDateTime" ),
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.ORDERED_ON_DATE_TIME ],
 				new EmptyColumn ( "VisitDiagnosis" ),
 				new ConstantColumn ( "IsBilled", "1" ),
-				new EmptyColumn ( "FirstAddendingDoctorKey" ),
-				attendingDoctor [ DoctorColumn.eDoctorColumns.LAST_NAME ],
+				firstAttending [ DoctorColumn.eDoctorColumns.LAST_NAME ],
+				p_attendingDoctor [ DoctorColumn.eDoctorColumns.LAST_NAME ],
 				new EmptyColumn ( "FirstSigningFirstName" ),
 				new EmptyColumn ( "ResourceDescription" ),
 				new EmptyColumn ( "PatientMiddleName" ),
@@ -122,7 +125,10 @@ namespace MedicalDataGeneration.Clinic {
 		private void Generate( string p_outFile, int p_lineNums ) {
 			FileStream fs = new FileStream ( p_outFile, FileMode.Create );
 
-			Column [ ] columns = GenColumns ( Random );
+			PatientColumn patient = new PatientColumn ( Random );
+			DoctorColumn attendingDoctor = new DoctorColumn ( Random, "Attending" );
+			DoctorColumn orderingDoctor = new DoctorColumn ( Random, "Ordering" );
+			Column [ ] columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
 
 			using ( StreamWriter sw = new StreamWriter ( fs ) ) {
 				for ( int j = 0; j < columns.Length; j++ ) {
@@ -134,16 +140,25 @@ namespace MedicalDataGeneration.Clinic {
 
 				sw.WriteLine ( "" );
 
-				for ( int i = 0; i < p_lineNums; i++ ) {
-					for ( int j = 0; j < columns.Length; j++ ) {
-						sw.Write ( columns [ j ].Generate ( ) );
-						if ( j != columns.Length - 1 ) {
-							sw.Write ( "," );
+				for ( int i = 0; i < p_lineNums; ) {
+					int visits = Random.Next ( 1, 5 );
+
+					for ( int x = 0; x < visits && i < p_lineNums; x++, i++ ) {
+						for ( int j = 0; j < columns.Length; j++ ) {
+							sw.Write ( columns [ j ].Generate ( ) );
+							if ( j != columns.Length - 1 ) {
+								sw.Write ( "," );
+							}
 						}
+
+						sw.WriteLine ( "" );
+						columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
 					}
 
-					sw.WriteLine ( "" );
-					columns = GenColumns ( Random );
+					patient = new PatientColumn ( Random );
+					attendingDoctor = new DoctorColumn ( Random, "Attending" );
+					orderingDoctor = new DoctorColumn ( Random, "Ordering" );
+					columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
 				}
 			}
 		}

@@ -13,7 +13,10 @@ namespace MedicalDataGeneration.Clinic {
 			SEX,
 			AGE_END,
 			DATE_OF_BIRTH,
+			MRN
 		}
+
+		private int MRN;
 
 		public PatientColumn ( Random p_random ) : base ( p_random ) {
 			Person = new Person ( Random, 1, 1 );
@@ -23,12 +26,17 @@ namespace MedicalDataGeneration.Clinic {
 			HeaderMapper.Add ( "SEX", Sex );
 			HeaderMapper.Add ( "AGE_END", AgeEnd );
 			HeaderMapper.Add ( "DATE_OF_BIRTH", DateOfBirth );
+			HeaderMapper.Add ( "MRN", GetMRN );
 		}
 
 		public Column this [ ePatientColumns p_column ] {
 			get {
 				return HeaderMapper [ p_column.ToString ( ) ] ( );
 			}
+		}
+
+		public ConstantColumn GetMRN ( ) {
+			return new ConstantColumn ( "MRN", MRN.ToString ( ) );
 		}
 
 		public ConstantColumn FirstName ( ) {

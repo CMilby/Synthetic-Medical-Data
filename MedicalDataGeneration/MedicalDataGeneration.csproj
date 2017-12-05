@@ -38,11 +38,16 @@
     <Compile Include="Clinic\ClinicGenerator.cs" />
     <Compile Include="Clinic\Column.cs" />
     <Compile Include="Clinic\ConstantColumn.cs" />
+    <Compile Include="Clinic\DateGeneratorColumn.cs" />
     <Compile Include="Clinic\DoctorColumn.cs" />
     <Compile Include="Clinic\EmptyColumn.cs" />
+    <Compile Include="Clinic\HospitalColumn.cs" />
     <Compile Include="Clinic\IncrementalColumn.cs" />
     <Compile Include="Clinic\MultivalueColumn.cs" />
     <Compile Include="Clinic\PatientColumn.cs" />
+    <Compile Include="Clinic\ProcedureColumn.cs" />
+    <Compile Include="Clinic\RandomFillColumn.cs" />
+    <Compile Include="Clinic\RandomNumberColumn.cs" />
     <Compile Include="Constraints\PersonConstraints.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
