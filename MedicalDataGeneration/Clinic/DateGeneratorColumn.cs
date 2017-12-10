@@ -18,22 +18,51 @@ namespace MedicalDataGeneration.Clinic {
 			END_PROCEDURE_DATE_TIME,
 			ORDERED_ON_DATE_TIME,
 			LEFT_DEPT_DATE_TIME,
-			FIRST_ADDENDUM_DATE_TIME
+			FIRST_ADDENDUM_DATE_TIME,
+			FIRST_SIGN_DATE_TIME
 		}
 
 		private static DateTime StartDate = new DateTime ( 1960, 1, 1 );
 		private static DateTime EndDate = new DateTime ( 1995, 1, 1 );
 
-		private DateTime CheckIn;
+		private DateTime OriginalOrder;
+		private DateTime OrderOn;
+		private DateTime OrderFor;
+
+		private DateTime EnterDept;
+		private DateTime BeginProc;
+		private DateTime EndProce;
+		private DateTime LeaveDept;
+
+		private DateTime FirstRead;
+		private DateTime FirstSign;
+		private DateTime FirstAddend;
+		private DateTime LastSign;
 
 		public DateGeneratorColumn ( Random p_random, DateTime p_checkIn ) : base ( p_random ) {
-			CheckIn = p_checkIn;
+			CreateTimes ( p_checkIn );
 			PopulateHeaders ( ); 
 		}
 
 		public DateGeneratorColumn ( Random p_random ) : base ( p_random ) {
-			CheckIn = GetRandomDay ( );
+			CreateTimes ( GetRandomDay ( ) );
 			PopulateHeaders ( );
+		}
+
+		private void CreateTimes ( DateTime p_time ) {
+			OriginalOrder = p_time;
+			OrderOn = p_time;
+			OrderFor = p_time;
+
+			EnterDept = AddRandomMinutes ( p_time, 10, 20 );
+			BeginProc = AddRandomMinutes ( EnterDept, 5, 30 );
+			EndProce = AddRandomMinutes ( BeginProc, 30, 160 );
+			LeaveDept = AddRandomMinutes ( EndProce, 1, 10 );
+
+			FirstRead = AddRandomMinutes ( LeaveDept, 15, 1000 );
+			FirstSign = AddRandomMinutes ( FirstRead, 1, 1000 );
+			FirstAddend = AddRandomMinutes ( FirstSign, 1, 1000 );
+			LastSign = AddRandomMinutes ( FirstAddend, 1, 1000 );
 		}
 
 		private void PopulateHeaders ( ) {
@@ -47,46 +76,51 @@ namespace MedicalDataGeneration.Clinic {
 			HeaderMapper.Add ( "ORDERED_ON_DATE_TIME", GetOrderedOnDateTime );
 			HeaderMapper.Add ( "LEFT_DEPT_DATE_TIME", GetLeftDeptDateTime );
 			HeaderMapper.Add ( "FIRST_ADDENDUM_DATE_TIME", GetFirstAddendumDateTime );
+			HeaderMapper.Add ( "FIRST_SIGN_DATE_TIME", GetFistSigningDateTime );
 		}
 
+		private ConstantColumn GetFistSigningDateTime ( ) {
+			return new ConstantColumn ( "FirstSigningDateTime", FirstSign.ToString ( "yyyy-MM-dd HH:mm" ) );
+		}
+		
 		private ConstantColumn GetFirstAddendumDateTime ( ) {
-			return new ConstantColumn ( "FirstAddendumDateTime", AddRandomMinutes ( 300, 420 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "FirstAddendumDateTime", FirstAddend.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetLeftDeptDateTime() {
-			return new ConstantColumn ( "LeftDeptDateTime", AddRandomHours ( 5, 7 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "LeftDeptDateTime", LeaveDept.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetLastSigningDateTime ( ) {
-			return new ConstantColumn ( "LastSigningDateTime", AddRandomHours ( 4, 5 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "LastSigningDateTime", LastSign.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetEnterDeptDateTime() {
-			return new ConstantColumn ( "EnterDeptartmentDateTime", CheckIn.ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "EnterDeptartmentDateTime", EnterDept.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetOrderedForDateTime() {
-			return new ConstantColumn ( "OrderedForDateTime", AddRandomHours ( 12, 24 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "OrderedForDateTime", OrderFor.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetFirstReadingDateTime() {
-			return new ConstantColumn ( "FirstReadingDateTime", AddRandomMinutes ( 45, 60 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "FirstReadingDateTime", FirstRead.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetBeginProcedureDateTime() {
-			return new ConstantColumn ( "BeginProcedureDateTime", AddRandomMinutes ( 20, 35 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "BeginProcedureDateTime", BeginProc.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetOriginalOrderedDateTime() {
-			return new ConstantColumn ( "OriginalOrderedDateTime", AddRandomHours ( 5, 9 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "OriginalOrderedDateTime", OriginalOrder.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetEndProcedureDateTime() {
-			return new ConstantColumn ( "EndProcedureDateTime", AddRandomHours ( 3, 7 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "EndProcedureDateTime", EndProce.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		private ConstantColumn GetOrderedOnDateTime() {
-			return new ConstantColumn ( "OrderedOnDateTime", AddRandomHours ( 7, 8 ).ToString ( "yyyy-MM-dd HH:mm" ) );
+			return new ConstantColumn ( "OrderedOnDateTime", OrderOn.ToString ( "yyyy-MM-dd HH:mm" ) );
 		}
 
 		public Column this [ eDateGeneratorColumns p_column ] {
@@ -99,12 +133,12 @@ namespace MedicalDataGeneration.Clinic {
 			return StartDate.AddDays ( Random.Next ( EndDate.Subtract ( StartDate ).Days ) );
 		}
 
-		private DateTime AddRandomHours ( int p_min, int p_max ) {
-			return CheckIn.AddHours ( Random.Next ( p_min, p_max ) );
+		private DateTime AddRandomMinutes ( DateTime p_time, int p_min, int p_max ) {
+			return p_time.AddMinutes ( Random.Next ( p_min, p_max ) );
 		}
 
-		private DateTime AddRandomMinutes ( int p_min, int p_max ) {
-			return CheckIn.AddSeconds ( Random.Next ( p_min, p_max ) );
+		private DateTime AddRandomHours ( DateTime p_time, int p_min, int p_max ) {
+			return p_time.AddHours ( Random.Next ( p_min, p_max ) );
 		}
 	}
 }

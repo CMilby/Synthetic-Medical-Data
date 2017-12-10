@@ -9,8 +9,8 @@ namespace MedicalDataGeneration {
 
 		public static void Main ( string[] args ) {
 			int numLines = 10;
-			string myPath = "C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\clinic.csv";
-			new ClinicGenerator ( myPath, numLines, 1234 );
+			string myPath = "C:\\Users\\Craig\\Documents\\Projects\\Synthetic-Medical-Data\\Data\\clinic.xml";
+			new ClinicGenerator ( myPath, numLines, 1234, ClinicGenerator.eGeneratorType.GENERATOR_XML );
 			Console.WriteLine ( "Generated Clinic Data" );
 
 			/*int numLines = 5000;

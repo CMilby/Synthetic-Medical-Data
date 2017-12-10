@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Patient>
+    <PatientFirstName>Patricia</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit>592528</TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription>MISCELLANEOUS</CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>116966</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100000</ID>
+    <DateOfBirth>1957-07-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority>CCF</MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription></FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1975-01-04 02:49</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>561527</OrderingDoctorNumber>
+    <LastSigningDateTime>1975-01-05 19:53</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>VMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Light</OrderingLastName>
+    <EnterDeptartmentDateTime>1975-01-04 00:18</EnterDeptartmentDateTime>
+    <PatientLastName>Carter</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Ventura Medical Center</HospitalDescription>
+    <ProcedureCode>XR 5421</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1975-01-04 22:45</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>XR KNEE AP/LAT UNI</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>60</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>5305</DepartmentKey>
+    <Accession>100001</Accession>
+    <OrderedForDateTime>1975-01-04 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode></StudyTypeCPTCode>
+    <FirstReadingDateTime>1975-01-04 08:25</FirstReadingDateTime>
+    <BeginProcedureDateTime>1975-01-04 00:37</BeginProcedureDateTime>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <BodyPart>KNEE</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1975-01-05 09:29</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>X-Ray</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1975-01-04 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Fermina</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Adriene</OrderingFirstName>
+    <ModalityCode>XR</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>9460</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1975-01-04 02:40</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1975-01-04 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Henson</FirstAddendingLastName>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Patricia</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>116966</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100002</ID>
+    <DateOfBirth>1957-07-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority>CCF</MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription>Staff</FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1972-12-29 01:57</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>561527</OrderingDoctorNumber>
+    <LastSigningDateTime>1972-12-30 20:35</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>LMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Light</OrderingLastName>
+    <EnterDeptartmentDateTime>1972-12-29 00:16</EnterDeptartmentDateTime>
+    <PatientLastName>Carter</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Lancaster Medical Center</HospitalDescription>
+    <ProcedureCode>XR 9230</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1972-12-29 20:35</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>XR ELBOW 3VIEW</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>60</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>2258</DepartmentKey>
+    <Accession>100003</Accession>
+    <OrderedForDateTime>1972-12-29 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>57044</StudyTypeCPTCode>
+    <FirstReadingDateTime>1972-12-29 08:41</FirstReadingDateTime>
+    <BeginProcedureDateTime>1972-12-29 00:24</BeginProcedureDateTime>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <BodyPart>MSK-ELBOW</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1972-12-30 10:18</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>X-Ray</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1972-12-29 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Fermina</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Adriene</OrderingFirstName>
+    <ModalityCode>XR</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>4408</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1972-12-29 01:56</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1972-12-29 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Edmondson</FirstAddendingLastName>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Patricia</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>116966</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription>Staff</FirstAddendingEmployeeTypeDescription>
+    <ID>100004</ID>
+    <DateOfBirth>1957-07-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority></MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription>Staff</FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1981-11-05 02:38</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription></LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>561527</OrderingDoctorNumber>
+    <LastSigningDateTime>1981-11-06 20:31</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>VMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Light</OrderingLastName>
+    <EnterDeptartmentDateTime>1981-11-05 00:10</EnterDeptartmentDateTime>
+    <PatientLastName>Carter</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Ventura Medical Center</HospitalDescription>
+    <ProcedureCode>CT 9528</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1981-11-05 22:44</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>CT CHEST CARDIAC WO CONTRAST</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>60</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>3331</DepartmentKey>
+    <Accession>100005</Accession>
+    <OrderedForDateTime>1981-11-05 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>18715</StudyTypeCPTCode>
+    <FirstReadingDateTime>1981-11-05 09:55</FirstReadingDateTime>
+    <BeginProcedureDateTime>1981-11-05 00:22</BeginProcedureDateTime>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <BodyPart>CARDIAC</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1981-11-06 14:28</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Computed Tomography</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1981-11-05 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Fermina</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Adriene</OrderingFirstName>
+    <ModalityCode>CT</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>9201</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1981-11-05 02:36</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1981-11-05 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Mosley</FirstAddendingLastName>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Patricia</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId>10</LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>116966</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100006</ID>
+    <DateOfBirth>1957-07-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority>CCF</MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription>Staff</FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1990-07-09 01:31</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>561527</OrderingDoctorNumber>
+    <LastSigningDateTime>1990-07-11 00:28</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>LMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Light</OrderingLastName>
+    <EnterDeptartmentDateTime>1990-07-09 00:15</EnterDeptartmentDateTime>
+    <PatientLastName>Carter</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Lancaster Medical Center</HospitalDescription>
+    <ProcedureCode>XR 8396</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1990-07-09 19:39</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>XR SHOULDER 2V AP/TRUE AP LT</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>60</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>3311</DepartmentKey>
+    <Accession>100007</Accession>
+    <OrderedForDateTime>1990-07-09 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>51291</StudyTypeCPTCode>
+    <FirstReadingDateTime>1990-07-09 14:48</FirstReadingDateTime>
+    <BeginProcedureDateTime>1990-07-09 00:34</BeginProcedureDateTime>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <BodyPart>SHOULDER</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1990-07-10 09:47</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>X-Ray</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1990-07-09 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Fermina</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Adriene</OrderingFirstName>
+    <ModalityCode>XR</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>3472</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1990-07-09 01:29</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1990-07-09 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Suggs</FirstAddendingLastName>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Patricia</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit>935213</TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription>MISCELLANEOUS</CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>116966</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100008</ID>
+    <DateOfBirth>1957-07-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority>CCF</MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription></FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1990-06-20 01:03</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>561527</OrderingDoctorNumber>
+    <LastSigningDateTime>1990-06-21 02:24</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>VMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Light</OrderingLastName>
+    <EnterDeptartmentDateTime>1990-06-20 00:11</EnterDeptartmentDateTime>
+    <PatientLastName>Carter</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Ventura Medical Center</HospitalDescription>
+    <ProcedureCode>MR 6665</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1990-06-20 10:31</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>MRI 3D RECONSTRUCTION</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>60</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>2648</DepartmentKey>
+    <Accession>100009</Accession>
+    <OrderedForDateTime>1990-06-20 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode></StudyTypeCPTCode>
+    <FirstReadingDateTime>1990-06-20 07:18</FirstReadingDateTime>
+    <BeginProcedureDateTime>1990-06-20 00:21</BeginProcedureDateTime>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <BodyPart>ABDOMEN-UNDEF</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1990-06-20 10:38</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Magnetic Resonance Imaging</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1990-06-20 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Fermina</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Adriene</OrderingFirstName>
+    <ModalityCode>MR</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>1093</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1990-06-20 00:56</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1990-06-20 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Cormier</FirstAddendingLastName>
+    <AttendingLastName>Mcmullen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Marshall</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId>10</LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>406069</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100010</ID>
+    <DateOfBirth>1965-10-10</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority></MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription></FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1990-06-07 02:02</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>420550</OrderingDoctorNumber>
+    <LastSigningDateTime>1990-06-08 20:41</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>AMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Cannon</OrderingLastName>
+    <EnterDeptartmentDateTime>1990-06-07 00:14</EnterDeptartmentDateTime>
+    <PatientLastName>Crosby</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Adams Medical Center</HospitalDescription>
+    <ProcedureCode>US 1388</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>MALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1990-06-07 19:07</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>US CAROTID BIL</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>52</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>4949</DepartmentKey>
+    <Accession>100011</Accession>
+    <OrderedForDateTime>1990-06-07 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>95424</StudyTypeCPTCode>
+    <FirstReadingDateTime>1990-06-07 12:21</FirstReadingDateTime>
+    <BeginProcedureDateTime>1990-06-07 00:28</BeginProcedureDateTime>
+    <AttendingLastName>Owen</AttendingLastName>
+    <BodyPart>NECK</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1990-06-08 08:20</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Ultrasound</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1990-06-07 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Lester</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Maurine</OrderingFirstName>
+    <ModalityCode>US</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>1701</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1990-06-07 02:01</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1990-06-07 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Brand</FirstAddendingLastName>
+    <AttendingLastName>Owen</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Stacey</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId>10</LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>344375</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100012</ID>
+    <DateOfBirth>1954-01-01</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority></MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription></FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1973-03-27 01:12</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>307164</OrderingDoctorNumber>
+    <LastSigningDateTime>1973-03-28 11:00</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>AMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Newman</OrderingLastName>
+    <EnterDeptartmentDateTime>1973-03-27 00:12</EnterDeptartmentDateTime>
+    <PatientLastName>Krause</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Adams Medical Center</HospitalDescription>
+    <ProcedureCode>CT 3044</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>FEMALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1973-03-27 09:02</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>CT ABDOMEN W IVCON</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>63</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>4078</DepartmentKey>
+    <Accession>100013</Accession>
+    <OrderedForDateTime>1973-03-27 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>89156</StudyTypeCPTCode>
+    <FirstReadingDateTime>1973-03-27 03:30</FirstReadingDateTime>
+    <BeginProcedureDateTime>1973-03-27 00:29</BeginProcedureDateTime>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <BodyPart>ABDOMEN-CT ABD</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1973-03-27 18:51</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Computed Tomography</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1973-03-27 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Jermaine</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Brenton</OrderingFirstName>
+    <ModalityCode>CT</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>4263</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1973-03-27 01:02</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1973-03-27 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Askew</FirstAddendingLastName>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Stacey</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit></TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>344375</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100014</ID>
+    <DateOfBirth>1954-01-01</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority>CCF</MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription></FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1973-08-05 01:57</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>307164</OrderingDoctorNumber>
+    <LastSigningDateTime>1973-08-05 22:38</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>VMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Newman</OrderingLastName>
+    <EnterDeptartmentDateTime>1973-08-05 00:12</EnterDeptartmentDateTime>
+    <PatientLastName>Krause</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Ventura Medical Center</HospitalDescription>
+    <ProcedureCode>MR 2334</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>FEMALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1973-08-05 08:05</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>MRI 3D RECONSTRUCTION</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>63</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>2676</DepartmentKey>
+    <Accession>100015</Accession>
+    <OrderedForDateTime>1973-08-05 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>26961</StudyTypeCPTCode>
+    <FirstReadingDateTime>1973-08-05 03:59</FirstReadingDateTime>
+    <BeginProcedureDateTime>1973-08-05 00:41</BeginProcedureDateTime>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <BodyPart>ABDOMEN-UNDEF</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1973-08-05 16:01</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Magnetic Resonance Imaging</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1973-08-05 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Jermaine</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Brenton</OrderingFirstName>
+    <ModalityCode>MR</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>1673</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1973-08-05 01:48</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1973-08-05 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Edmonds</FirstAddendingLastName>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Stacey</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit>763812</TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>344375</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100016</ID>
+    <DateOfBirth>1954-01-01</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority></MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription>Staff</FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1975-04-24 01:58</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>307164</OrderingDoctorNumber>
+    <LastSigningDateTime>1975-04-25 15:02</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>FMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Newman</OrderingLastName>
+    <EnterDeptartmentDateTime>1975-04-24 00:15</EnterDeptartmentDateTime>
+    <PatientLastName>Krause</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Fairfield Medical Center</HospitalDescription>
+    <ProcedureCode>MM 1482</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>FEMALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1975-04-24 17:18</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>MAMMOGRAM DIGITAL DIAGNOSTIC BIL</ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>63</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>4853</DepartmentKey>
+    <Accession>100017</Accession>
+    <OrderedForDateTime>1975-04-24 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>16714</StudyTypeCPTCode>
+    <FirstReadingDateTime>1975-04-24 13:56</FirstReadingDateTime>
+    <BeginProcedureDateTime>1975-04-24 00:21</BeginProcedureDateTime>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <BodyPart>BREAST</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1975-04-25 08:03</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription>Mammography</ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1975-04-24 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Jermaine</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Brenton</OrderingFirstName>
+    <ModalityCode>MM</ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>5896</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1975-04-24 01:56</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1975-04-24 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Fitch</FirstAddendingLastName>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+  <Patient>
+    <PatientFirstName>Stacey</PatientFirstName>
+    <FirstAddendingFirstName></FirstAddendingFirstName>
+    <TechnicalAccountingUnit>370127</TechnicalAccountingUnit>
+    <LastSigningEmployeeTypeId></LastSigningEmployeeTypeId>
+    <CancelDescription></CancelDescription>
+    <Type>Study</Type>
+    <ProcedureSubspeciality></ProcedureSubspeciality>
+    <OrderingDoctorNPI>344375</OrderingDoctorNPI>
+    <ProcedureReason>Test</ProcedureReason>
+    <FirstAddendingEmployeeTypeDescription></FirstAddendingEmployeeTypeDescription>
+    <ID>100018</ID>
+    <DateOfBirth>1954-01-01</DateOfBirth>
+    <LateralityDescription></LateralityDescription>
+    <IsReportable>1</IsReportable>
+    <MRNAssigningAuthority></MRNAssigningAuthority>
+    <FirstReadingEmployeeTypeDescription>Staff</FirstReadingEmployeeTypeDescription>
+    <LeftDeptDateTime>1976-08-07 01:22</LeftDeptDateTime>
+    <IsFamilyHealthCenter>FALSE</IsFamilyHealthCenter>
+    <Impression></Impression>
+    <LastSigningEmployeeTypeDescription>Staff</LastSigningEmployeeTypeDescription>
+    <OrderingDoctorNumber>307164</OrderingDoctorNumber>
+    <LastSigningDateTime>1976-08-08 13:52</LastSigningDateTime>
+    <FirstReadingLastName></FirstReadingLastName>
+    <HospitalCode>AMC</HospitalCode>
+    <FirstAddendingEmployeeTypeID></FirstAddendingEmployeeTypeID>
+    <OrderingLastName>Newman</OrderingLastName>
+    <EnterDeptartmentDateTime>1976-08-07 00:10</EnterDeptartmentDateTime>
+    <PatientLastName>Krause</PatientLastName>
+    <OrderingDoctorMiddleName></OrderingDoctorMiddleName>
+    <HospitalDescription>Adams Medical Center</HospitalDescription>
+    <ProcedureCode> 6005</ProcedureCode>
+    <LateralityCode></LateralityCode>
+    <LastSigningNPI></LastSigningNPI>
+    <Sex>FEMALE</Sex>
+    <AttendingDoctorMiddleName></AttendingDoctorMiddleName>
+    <MRN>0</MRN>
+    <PatientClassCode></PatientClassCode>
+    <FirstSigningDateTime>1976-08-07 22:01</FirstSigningDateTime>
+    <LastSigningFirstName></LastSigningFirstName>
+    <FirstSigningMiddleName></FirstSigningMiddleName>
+    <FirstAddendingNPI></FirstAddendingNPI>
+    <ProcedureDescription>XR CHEST 1V FRONTAL </ProcedureDescription>
+    <EnterpriseMRN>E0</EnterpriseMRN>
+    <PatientAgeAtEndProcedure>63</PatientAgeAtEndProcedure>
+    <FirstReadingMiddleName></FirstReadingMiddleName>
+    <DepartmentKey>8296</DepartmentKey>
+    <Accession>100019</Accession>
+    <OrderedForDateTime>1976-08-07 00:00</OrderedForDateTime>
+    <LastSigningMiddleName></LastSigningMiddleName>
+    <StudyTypeCPTCode>20506</StudyTypeCPTCode>
+    <FirstReadingDateTime>1976-08-07 11:46</FirstReadingDateTime>
+    <BeginProcedureDateTime>1976-08-07 00:35</BeginProcedureDateTime>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <BodyPart>CHEST</BodyPart>
+    <TotalImagesWithinStudy></TotalImagesWithinStudy>
+    <FirstReadingNPI></FirstReadingNPI>
+    <FirstAddendumDateTime>1976-08-08 00:21</FirstAddendumDateTime>
+    <PatientClassDescription></PatientClassDescription>
+    <FirstSigningEmployeeTypeID></FirstSigningEmployeeTypeID>
+    <ModalityDescription></ModalityDescription>
+    <FirstReadingDoctorKey></FirstReadingDoctorKey>
+    <LastSigningDoctorKey></LastSigningDoctorKey>
+    <FirstAddendingMiddleName></FirstAddendingMiddleName>
+    <ResourceKey></ResourceKey>
+    <AttendingDoctorNPI></AttendingDoctorNPI>
+    <OriginalOrderedDateTime>1976-08-07 00:00</OriginalOrderedDateTime>
+    <FirstReadingEmployeeTypeID></FirstReadingEmployeeTypeID>
+    <AttendingFirstName>Jermaine</AttendingFirstName>
+    <AttendingDoctorNumber></AttendingDoctorNumber>
+    <FirstSigningNPI></FirstSigningNPI>
+    <OrderingDoctorSKey></OrderingDoctorSKey>
+    <DepartmentLongName></DepartmentLongName>
+    <FirstSigningEmployeeTypeDescription></FirstSigningEmployeeTypeDescription>
+    <OrderingFirstName>Brenton</OrderingFirstName>
+    <ModalityCode></ModalityCode>
+    <FirstSigningLastName></FirstSigningLastName>
+    <ProcedurePriority></ProcedurePriority>
+    <StudySKey>1335</StudySKey>
+    <ProcedureIsActive>0</ProcedureIsActive>
+    <FirstSigningDoctorKey></FirstSigningDoctorKey>
+    <EndProcedureDateTime>1976-08-07 01:15</EndProcedureDateTime>
+    <DepartmentCode></DepartmentCode>
+    <ResourceCode></ResourceCode>
+    <AttendingDoctorSKey></AttendingDoctorSKey>
+    <OrderedOnDateTime>1976-08-07 00:00</OrderedOnDateTime>
+    <VisitDiagnosis></VisitDiagnosis>
+    <IsBilled>1</IsBilled>
+    <FirstAddendingLastName>Delatorre</FirstAddendingLastName>
+    <AttendingLastName>Edwards</AttendingLastName>
+    <FirstSigningFirstName></FirstSigningFirstName>
+    <ResourceDescription></ResourceDescription>
+    <PatientMiddleName></PatientMiddleName>
+    <LastSigningLastName></LastSigningLastName>
+    <CancelCode></CancelCode>
+    <FirstReadingFirstName></FirstReadingFirstName>
+    <StudyTypeCPTDescription></StudyTypeCPTDescription>
+  </Patient>
+</root>

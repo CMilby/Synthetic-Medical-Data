@@ -1,19 +1,33 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace MedicalDataGeneration.Clinic {
 
 	public class ClinicGenerator {
 
+		public enum eGeneratorType {
+			GENERATOR_CSV,
+			GENERATOR_XML
+		}
+
 		private Random Random;
 
-		public ClinicGenerator ( string p_outFile, int p_numLines, long p_seed ) {
+		public ClinicGenerator( string p_outFile, int p_numLines, long p_seed, eGeneratorType p_type = eGeneratorType.GENERATOR_CSV ) {
 			Random = new Random ( p_seed );
 
 			HospitalColumnPool.Init ( 5, Random );
-			Generate ( p_outFile, p_numLines );
+
+			if ( p_type == eGeneratorType.GENERATOR_CSV ) {
+				Generate ( p_outFile, p_numLines );
+			} else if ( p_type == eGeneratorType.GENERATOR_XML ) {
+				GenerateXML ( p_outFile, p_numLines );
+			}
 		}
 
-		private Column[] GenColumns ( Random p_random, PatientColumn p_patient, DoctorColumn p_attendingDoctor, DoctorColumn p_orderingDoctor ) {
+		private Column [ ] GenColumns( Random p_random, PatientColumn p_patient, DoctorColumn p_attendingDoctor, DoctorColumn p_orderingDoctor ) {
 			HospitalColumn hospital = HospitalColumnPool.GetHospital ( p_random );
 			DoctorColumn firstReading = new DoctorColumn ( p_random, "FirstReading" );
 			DoctorColumn firstAttending = new DoctorColumn ( p_random, "FirstAddending" );
@@ -58,7 +72,7 @@ namespace MedicalDataGeneration.Clinic {
 				new EmptyColumn ( "AttendingDoctorMiddleName" ),
 				p_patient [ PatientColumn.ePatientColumns.MRN ],
 				new EmptyColumn ( "PatientClassCode" ),
-				dates [ DateGeneratorColumn.eDateGeneratorColumns.FIRST_READING_DATE_TIME ],
+				dates [ DateGeneratorColumn.eDateGeneratorColumns.FIRST_SIGN_DATE_TIME ],
 				new EmptyColumn ( "LastSigningFirstName" ),
 				new EmptyColumn ( "FirstSigningMiddleName" ),
 				new EmptyColumn ( "FirstAddendingNPI" ),
@@ -161,6 +175,44 @@ namespace MedicalDataGeneration.Clinic {
 					columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
 				}
 			}
+		}
+
+		private void GenerateXML ( string p_outFile, int p_lineNums ) {
+			PatientColumn patient = new PatientColumn ( Random );
+			DoctorColumn attendingDoctor = new DoctorColumn ( Random, "Attending" );
+			DoctorColumn orderingDoctor = new DoctorColumn ( Random, "Ordering" );
+			Column [ ] columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
+
+			XDocument myDoc = new XDocument ( );
+			XElement myRoot = new XElement ( "root" );
+			
+			for ( int i = 0; i < p_lineNums; ) {
+				int visits = Random.Next ( 1, 5 );
+
+				for ( int x = 0; x < visits && i < p_lineNums; x++, i++ ) {
+					myRoot.Add ( PatientXML ( columns ) );
+					columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
+				}
+
+				patient = new PatientColumn ( Random );
+				attendingDoctor = new DoctorColumn ( Random, "Attending" );
+				orderingDoctor = new DoctorColumn ( Random, "Ordering" );
+				columns = GenColumns ( Random, patient, attendingDoctor, orderingDoctor );
+			}
+
+			myDoc.Add ( myRoot );
+			myDoc.Save ( p_outFile );
+		}
+
+		private XElement PatientXML( Column[] p_columns ) {
+			XElement myRoot = new XElement ( "Patient" );
+			// myRoot.Add ( new XAttribute ( "xmlns", "http://hl7.org/fhir" ) );
+
+			for ( int i = 0; i < p_columns.Length; i++ ) {
+				myRoot.Add ( new XElement ( p_columns [ i ].GetHeader ( ), p_columns [ i ].Generate ( ) ) );
+			}
+
+			return myRoot;
 		}
 	}
 }
